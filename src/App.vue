@@ -1,100 +1,89 @@
 <template>
-  <div class="min-h-screen flex flex-col">
-    <AppHeader :links="navLinks" />
-    <main class="flex-grow">
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection :skills="skills" />
-      <OtherSkillsSection :languages="languages" :otherSkills="otherSkills" />
-      <ProjectsSection :projects="projects" />
-    </main>
+  <div class="min-h-screen bg-gray-50">
+    <NavigationBar :navItems="navItems" />
+
+    <IntroSection id="intro" />
+    <AboutSection id="about" />
+    <SkillsSection id="skills" :skills="skills" />
+    <LanguagesSection id="languages" :languages="languages" />
+    <ProjectsSection id="projects" :projects="projects" />
+
     <FooterSection />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import AppHeader from './components/AppHeader.vue';
-import HeroSection from './components/HeroSection.vue';
-import AboutSection from './components/AboutSection.vue';
-import SkillsSection from './components/SkillsSection.vue';
-import OtherSkillsSection from './components/OtherSkillsSection.vue';
-import ProjectsSection from './components/ProjectSection.vue';
-import FooterSection from './components/FooterSection.vue';
-import type { NavLink, Skill, Language, Project } from './types';
+import { defineComponent, ref } from 'vue'
+import NavigationBar from './components/NavigationBar.vue'
+import IntroSection from './components/IntroSection.vue'
+import AboutSection from './components/AboutSection.vue'
+import SkillsSection from './components/SkillsSection.vue'
+import LanguagesSection from './components/LanguagesSection.vue'
+import ProjectsSection from './components/ProjectsSection.vue'
+import FooterSection from './components/FooterSection.vue'
+import type { Skill, Language, Project, NavItem } from './types'
 
 export default defineComponent({
   name: 'App',
   components: {
-    AppHeader,
-    HeroSection,
+    NavigationBar,
+    IntroSection,
     AboutSection,
     SkillsSection,
-    OtherSkillsSection,
+    LanguagesSection,
     ProjectsSection,
-    FooterSection,
+    FooterSection
   },
   setup() {
-    const navLinks: NavLink[] = [
-      { name: 'Home', href: '#home' },
-      { name: 'Über mich', href: '#about' },
-      { name: 'Skills', href: '#skills' },
-      { name: 'Projekte', href: '#projects' },
-      { name: 'Kontakt', href: '#contact' },
-    ];
+    const navItems = ref<NavItem[]>([
+      { id: 'intro', name: 'Start' },
+      { id: 'about', name: 'Über mich' },
+      { id: 'skills', name: 'Fähigkeiten' },
+      { id: 'languages', name: 'Sprachen' },
+      { id: 'projects', name: 'Projekte' }
+    ])
 
-    const skills: Skill[] = [
-      { name: 'Vue.js', level: 90, icon: 'fab fa-vuejs' },
-      { name: 'TypeScript', level: 85, icon: 'fab fa-js' },
-      { name: 'React', level: 80, icon: 'fab fa-react' },
-      { name: 'Node.js', level: 75, icon: 'fab fa-node-js' },
-      { name: 'CSS/Tailwind', level: 88, icon: 'fab fa-css3-alt' },
-      { name: 'HTML5', level: 95, icon: 'fab fa-html5' },
-    ];
+    const skills = ref<Skill[]>([
+      { name: 'Vue.js', level: 90, color: 'emerald' },
+      { name: 'TypeScript', level: 85, color: 'blue' },
+      { name: 'Tailwind CSS', level: 80, color: 'cyan' },
+      { name: 'Node.js', level: 75, color: 'green' },
+      { name: 'React', level: 70, color: 'indigo' }
+    ])
 
-    const languages: Language[] = [
+    const languages = ref<Language[]>([
       { name: 'Deutsch', level: 'Muttersprache' },
       { name: 'Englisch', level: 'Fließend (C1)' },
-      { name: 'Spanisch', level: 'Grundkenntnisse (A2)' },
-    ];
+      { name: 'Französisch', level: 'Grundkenntnisse (A2)' }
+    ])
 
-    const otherSkills: string[] = [
-      'Git & GitHub',
-      'Agile Entwicklung',
-      'REST APIs',
-      'Docker',
-      'CI/CD',
-      'Unit Testing',
-    ];
-
-    const projects: Project[] = [
+    const projects = ref<Project[]>([
       {
-        title: 'E-Commerce Platform',
-        description: 'Eine moderne E-Commerce-Plattform mit Vue.js und Node.js. Features: Warenkorb, Benutzerprofile, Zahlungsabwicklung.',
-        icon: 'fas fa-shopping-cart',
-        technologies: ['Vue.js', 'Node.js', 'MongoDB'],
+        id: 1,
+        title: 'E-Commerce Shop',
+        description: 'Ein moderner Online-Shop mit Vue 3, Typescript und Pinia',
+        icon: 'shopping-cart'
       },
       {
-        title: 'Task Management App',
-        description: 'Eine Aufgabenverwaltungs-App mit Drag-and-Drop-Funktionalität, Erinnerungen und Team-Kollaboration.',
-        icon: 'fas fa-tasks',
-        technologies: ['React', 'Firebase', 'Redux'],
+        id: 2,
+        title: 'Task Manager',
+        description: 'Eine Produktivitäts-App mit Drag & Drop Funktionalität',
+        icon: 'clipboard-list'
       },
       {
-        title: 'Fitness Tracker',
-        description: 'Eine mobile App zur Verfolgung von Workouts, Ernährung und Fortschritten mit Datenvisualisierung.',
-        icon: 'fas fa-heartbeat',
-        technologies: ['Vue Native', 'GraphQL', 'Chart.js'],
-      },
-    ];
+        id: 3,
+        title: 'Portfolio Website',
+        description: 'Eine responsive Portfolio-Webseite mit Vue und Tailwind',
+        icon: 'user'
+      }
+    ])
 
     return {
-      navLinks,
+      navItems,
       skills,
       languages,
-      otherSkills,
-      projects,
-    };
-  },
-});
+      projects
+    }
+  }
+})
 </script>

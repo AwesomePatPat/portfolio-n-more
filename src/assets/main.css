@@ -1,21 +1,7 @@
 @import './base.css';
 @import "tailwindcss";
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    @apply bg-gray-50 text-gray-800;
-    margin: 0;
-    padding: 0;
-  }
-}
-
-/* Override default app styles */
 #app {
-  width: 100%;
-  margin: 0;
-  padding: 0;
   font-weight: normal;
+  color: rgb(42, 41, 41);
 }

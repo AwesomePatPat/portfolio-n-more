@@ -1,12 +1,7 @@
-export interface NavLink {
-  name: string;
-  href: string;
-}
-
 export interface Skill {
   name: string;
   level: number;
-  icon: string;
+  color: string;
 }
 
 export interface Language {
@@ -15,8 +10,13 @@ export interface Language {
 }
 
 export interface Project {
+  id: number;
   title: string;
   description: string;
   icon: string;
-  technologies: string[];
+}
+
+export interface NavItem {
+  id: string;
+  name: string;
 }

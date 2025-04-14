@@ -1,24 +1,35 @@
 <template>
-  <section id="skills" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Meine Skills</h2>
-      <div class="max-w-3xl mx-auto grid gap-6">
+  <section
+    :id="id"
+    class="py-20 bg-gray-50"
+    v-motion
+    :initial="{ opacity: 0 }"
+    :visible="{ opacity: 1, transition: { duration: 800 } }"
+  >
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Meine Fähigkeiten</h2>
+
+      <div class="max-w-3xl mx-auto space-y-8">
         <div
-          v-for="skill in skills"
+          v-for="(skill, index) in skills"
           :key="skill.name"
-          class="bg-white rounded-lg shadow-md p-6"
+          v-motion
+          :initial="{ opacity: 0, x: -50 }"
+          :visible="{ opacity: 1, x: 0, transition: { delay: index * 100 } }"
+          class="mb-6"
         >
-          <div class="flex justify-between items-center mb-2">
-            <div class="flex items-center">
-              <i :class="skill.icon" class="text-2xl text-primary mr-3"></i>
-              <h3 class="text-xl font-semibold">{{ skill.name }}</h3>
-            </div>
-            <span class="text-lg font-medium">{{ skill.level }}%</span>
+          <div class="flex justify-between mb-2">
+            <span class="text-gray-700 font-medium">{{ skill.name }}</span>
+            <span class="text-gray-500">{{ skill.level }}%</span>
           </div>
-          <div class="w-full bg-gray-200 rounded-full h-2.5">
+          <div class="h-3 w-full bg-gray-200 rounded-full overflow-hidden">
             <div
-              class="bg-primary h-2.5 rounded-full"
+              class="h-full rounded-full"
+              :class="`bg-${skill.color}-500`"
               :style="{ width: `${skill.level}%` }"
+              v-motion
+              :initial="{ width: '0%' }"
+              :visible="{ width: `${skill.level}%`, transition: { duration: 1000, delay: index * 100 } }"
             ></div>
           </div>
         </div>
@@ -28,16 +39,21 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import type { Skill } from '../types';
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+import type { Skill } from '../types'
 
 export default defineComponent({
   name: 'SkillsSection',
   props: {
-    skills: {
-      type: Array as () => Skill[],
-      required: true,
+    id: {
+      type: String,
+      required: true
     },
-  },
-});
+    skills: {
+      type: Array as PropType<Skill[]>,
+      required: true
+    }
+  }
+})
 </script>
