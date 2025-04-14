@@ -33,28 +33,25 @@
         <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-indigo-500 rounded-full mt-4"></div>
       </div>
 
-      <div class="max-w-3xl mx-auto backdrop-blur-md bg-neutral-900/30 border border-neutral-800 rounded-2xl overflow-hidden shadow-xl p-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
         <div
           v-for="(skill, index) in skills"
           :key="skill.name"
           v-motion
-          :initial="{ opacity: 0, x: -50 }"
-          :visible="{ opacity: 1, x: 0, transition: { delay: index * 100 } }"
-          class="mb-8 group"
+          :initial="{ opacity: 0, y: 20 }"
+          :visible="{ opacity: 1, y: 0, transition: { delay: index * 100 } }"
+          class="backdrop-blur-md bg-neutral-900/30 border border-neutral-800 rounded-xl overflow-hidden shadow-lg p-4 group hover:border-emerald-500/30 hover:bg-neutral-900/50 transition-all duration-300"
         >
-          <div class="flex justify-between mb-2">
-            <span class="text-white font-medium">{{ skill.name }}</span>
-            <span class="text-emerald-400">{{ skill.level }}%</span>
+          <div class="flex items-center justify-center mb-3">
+            <!-- Skill icon (you can replace this with actual icons) -->
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500/20 to-indigo-600/20 flex items-center justify-center border border-white/10 mb-2">
+              <div class="text-emerald-400 text-lg group-hover:scale-110 transition-transform duration-300">
+                {{ getSkillIcon(skill.name) }}
+              </div>
+            </div>
           </div>
-          <div class="h-3 w-full bg-neutral-800 rounded-full overflow-hidden">
-            <div
-              class="h-full rounded-full bg-gradient-to-r from-emerald-500 to-indigo-600 group-hover:from-indigo-600 group-hover:to-emerald-500 transition-all duration-500"
-              :style="{ width: `${skill.level}%` }"
-              v-motion
-              :initial="{ width: '0%' }"
-              :visible="{ width: `${skill.level}%`, transition: { duration: 1000, delay: index * 100 } }"
-            ></div>
-          </div>
+
+          <h3 class="text-white font-medium text-center text-base">{{ skill.name }}</h3>
         </div>
       </div>
 
@@ -91,6 +88,34 @@ export default defineComponent({
     skills: {
       type: Array as PropType<Skill[]>,
       required: true
+    }
+  },
+  methods: {
+    // Ein einfaches Icon-System für die Skills (kann durch echte Icons ersetzt werden)
+    getSkillIcon(skillName: string): string {
+      const iconMap: Record<string, string> = {
+        "JavaScript": "JS",
+        "TypeScript": "TS",
+        "Vue.js": "Vue",
+        "React": "⚛️",
+        "Node.js": "Node",
+        "HTML/CSS": "</>",
+        "Python": "Py",
+        "PHP": "PHP",
+        "Java": "Java",
+        "C#": "C#",
+        "SQL": "SQL",
+        "GraphQL": "GQL",
+        "Git": "Git",
+        "Docker": "🐳",
+        "AWS": "AWS",
+        "Firebase": "🔥",
+        "MongoDB": "DB",
+        "UX/UI": "UX"
+        // Füge weitere Skills hinzu
+      };
+
+      return iconMap[skillName] || "•";
     }
   }
 })
