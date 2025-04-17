@@ -1,25 +1,24 @@
 <template>
   <header
-    class="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur-lg transition-all duration-500 border-b border-neutral-800"
-    :class="{'shadow-lg shadow-emerald-500/10': scrolled, 'py-6': !scrolled, 'py-3': scrolled}"
+    class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg transition-all duration-500 border-b border-gray-200"
+    :class="{'shadow-md': scrolled, 'py-6': !scrolled, 'py-3': scrolled}"
   >
     <nav class="container mx-auto px-6">
       <div class="flex justify-between items-center">
-        <!-- Logo mit modernisiertem Design -->
+        <!-- Logo mit modernem Design -->
         <div class="logo-wrapper group relative overflow-hidden">
-          <div class="text-2xl font-extrabold bg-gradient-to-r from-emerald-400 to-indigo-500 bg-clip-text text-transparent transform transition-all duration-500 group-hover:scale-110">
+          <div class="text-2xl font-extrabold bg-gradient-to-r from-emerald-500 to-blue-500 bg-clip-text text-transparent transform transition-all duration-500 group-hover:scale-110">
             Portfolio
           </div>
-          <div class="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-emerald-400 to-indigo-500 transform transition-all duration-500 group-hover:w-full"></div>
-          <div class="absolute -bottom-1 left-0 h-0.5 w-0 bg-white/40 transform transition-all duration-700 delay-200 group-hover:w-full"></div>
+          <div class="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-emerald-500 to-blue-500 transform transition-all duration-500 group-hover:w-full"></div>
         </div>
 
-        <!-- Desktop Navigation mit Partikeleffekten -->
+        <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-1">
           <div v-for="item in navItems" :key="item.id" class="relative">
             <a
               :href="'#'+item.id"
-              class="nav-link relative px-4 py-2 rounded-full text-neutral-300 hover:text-white transition-all duration-300 overflow-hidden font-medium"
+              class="nav-link relative px-4 py-2 rounded-full text-gray-700 hover:text-emerald-600 transition-all duration-300 overflow-hidden font-medium"
               :class="{
                 'nav-active': activeSection === item.id,
                 'hover:-translate-y-1': true
@@ -28,16 +27,16 @@
             >
               <span class="relative z-10">{{ item.name }}</span>
               <span
-                class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-indigo-600 rounded-full opacity-0 transition-all duration-300"
-                :class="{'opacity-80': activeSection === item.id}"
+                class="absolute inset-0 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full opacity-0 transition-all duration-300"
+                :class="{'opacity-100': activeSection === item.id}"
               ></span>
             </a>
           </div>
         </div>
 
-        <!-- Mobile Menu Button mit Animation -->
+        <!-- Mobile Menu Button -->
         <div class="md:hidden">
-          <button @click="toggleMobileMenu" class="text-white relative w-10 h-10 flex items-center justify-center bg-neutral-800 rounded-full">
+          <button @click="toggleMobileMenu" class="relative w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full text-gray-800">
             <div class="w-6 h-6 flex flex-col justify-between transform transition-all duration-300" :class="{'rotate-180': mobileMenuOpen}">
               <span
                 class="w-full h-0.5 bg-current transform transition-all duration-300 origin-left"
@@ -52,24 +51,24 @@
                 :class="{'-rotate-45 -translate-y-px translate-x-px': mobileMenuOpen}"
               ></span>
             </div>
-            <div class="absolute inset-0 rounded-full bg-emerald-500/20 transform scale-0 transition-all duration-300" :class="{'scale-100 opacity-10': mobileMenuOpen}"></div>
+            <div class="absolute inset-0 rounded-full bg-emerald-100 transform scale-0 transition-all duration-300" :class="{'scale-100 opacity-100': mobileMenuOpen}"></div>
           </button>
         </div>
       </div>
 
-      <!-- Mobile Menu mit verbesserter Animation -->
+      <!-- Mobile Menu -->
       <div
         class="md:hidden overflow-hidden transition-all duration-500 ease-in-out"
         :style="{ maxHeight: mobileMenuOpen ? '400px' : '0px', opacity: mobileMenuOpen ? '1' : '0' }"
       >
-        <div class="mt-4 pb-4 bg-neutral-900/90 backdrop-blur-md rounded-xl p-2 border border-neutral-800 shadow-lg">
+        <div class="mt-4 pb-4 bg-white rounded-xl p-2 border border-gray-200 shadow-md">
           <a
             v-for="(item, index) in navItems"
             :key="item.id"
             :href="'#'+item.id"
-            class="mobile-link block py-3 px-4 my-2 rounded-xl text-neutral-300 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-indigo-600 hover:text-white transition-all duration-300 font-medium"
+            class="mobile-link block py-3 px-4 my-2 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-blue-50 transition-all duration-300 font-medium"
             :class="{
-              'bg-gradient-to-r from-emerald-500/20 to-indigo-500/20': activeSection === item.id,
+              'bg-gradient-to-r from-emerald-50 to-blue-50': activeSection === item.id,
               'transform transition-all duration-300 delay-100': true,
               'translate-x-2 opacity-0': mobileMenuOpen && !mobileItemsVisible,
               'translate-x-0 opacity-100': mobileMenuOpen && mobileItemsVisible
@@ -78,7 +77,7 @@
             @click="closeMobileMenu"
           >
             <div class="flex items-center">
-              <div class="mr-3 w-8 h-8 rounded-full flex items-center justify-center bg-neutral-800/80 border border-neutral-700"></div>
+              <div class="mr-3 w-8 h-8 rounded-full flex items-center justify-center bg-gray-100"></div>
               {{ item.name }}
             </div>
             <div v-if="activeSection === item.id" class="h-0.5 mt-2 w-1/2 rounded-full bg-gradient-to-r from-emerald-500 to-transparent"></div>
@@ -128,7 +127,7 @@ export default defineComponent({
     }
 
     const createParticles = (event: MouseEvent) => {
-      const colors = ['#10b981', '#059669', '#6366f1', '#4f46e5']
+      const colors = ['#10b981', '#3b82f6', '#06b6d4', '#059669']
       const target = event.currentTarget as HTMLElement
       const rect = target.getBoundingClientRect()
 
@@ -241,7 +240,7 @@ export default defineComponent({
   left: 50%;
   width: 4px;
   height: 4px;
-  background: linear-gradient(to right, #10b981, #4f46e5);
+  background: linear-gradient(to right, #10b981, #3b82f6);
   border-radius: 50%;
   transform: translateX(-50%);
   filter: blur(1px);
@@ -275,11 +274,6 @@ export default defineComponent({
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
-}
-
-@keyframes subtle-glow {
-  0%, 100% { box-shadow: 0 0 5px rgba(16, 185, 129, 0.5); }
-  50% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.8); }
 }
 
 /* Mobile menu transitions */

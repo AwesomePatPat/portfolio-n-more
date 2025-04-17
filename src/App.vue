@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-white">
     <NavigationBar :navItems="navItems" />
 
     <IntroSection id="intro" />
@@ -53,8 +53,8 @@ export default defineComponent({
 
     const languages = ref<Language[]>([
       { name: 'Deutsch', level: 'Muttersprache' },
-      { name: 'Englisch', level: 'Fließend (C1)' },
-      { name: 'Französisch', level: 'Grundkenntnisse (A2)' }
+      { name: 'Englisch', level: 'Fliessend' },
+      { name: 'Französisch', level: 'Grundkenntnisse' }
     ])
 
     const projects = ref<Project[]>([
