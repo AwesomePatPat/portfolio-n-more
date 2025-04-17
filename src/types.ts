@@ -1,6 +1,5 @@
 export interface Skill {
   name: string;
-  level: number;
   color: string;
 }
 
@@ -14,6 +13,9 @@ export interface Project {
   title: string;
   description: string;
   icon: string;
+  longDescription?: string;
+  provider?: string;
+  technologies?: string[];
 }
 
 export interface NavItem {
