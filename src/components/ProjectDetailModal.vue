@@ -41,7 +41,7 @@
 
             <!-- Provider wenn vorhanden -->
             <div v-if="project.provider" class="mb-6">
-              <div class="text-sm text-gray-500 mb-1">Projekt Anbieter</div>
+              <div class="text-sm text-gray-500 mb-1">Projektanbieter</div>
               <div class="font-medium">{{ project.provider }}</div>
             </div>
 

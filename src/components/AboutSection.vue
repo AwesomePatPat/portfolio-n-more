@@ -37,11 +37,11 @@
               moderner Frameworks wie <span class="text-emerald-600 tech-highlight">Vue.js</span> und <span class="text-blue-600 tech-highlight">Express.js</span>.
             </p>
             <p class="text-lg leading-relaxed">
-              In meinem ersten Programmier-Projekt bei Swisscom hatte ich die möglichkeit die basic skills wie HTML, CSS und JavaScript zu lernen.
+              In meinem ersten Programmier-Projekt bei Swisscom hatte ich die Möglichkeit die Basic Skills wie HTML, CSS und JavaScript zu lernen.
               Später im Projekt habe ich dann den ersten Einblick in das Framework Angular bekommen.
             </p>
             <p class="text-lg leading-relaxed">
-              In späteren Projekten habe ich dann mit Vue.js und Express.js gearbeitet. Ich hatte auch die möglichkeit andere Lernende zu betreuen und ihnen men wissen weiterzugeben als rolle eines Projekt Anbieters.
+              In späteren Projekten habe ich dann mit Vue.js und Express.js gearbeitet. Ich hatte auch die Möglichkeit andere Lernende zu betreuen und ihnen mein Wissen weiterzugeben als Rolle eines Projektanbieters.
 
             </p>
 

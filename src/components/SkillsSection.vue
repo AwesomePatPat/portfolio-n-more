@@ -20,7 +20,7 @@
         <div class="inline-block px-4 py-1 rounded-full bg-white border border-gray-200 text-sm font-medium text-emerald-600 mb-4 hover-glow">
           Technisches Profil
         </div>
-        <h2 class="text-4xl font-bold text-gray-800 text-center mb-2">Meine <span class="bg-gradient-to-r from-emerald-500 to-blue-500 bg-clip-text text-transparent">Fähigkeiten</span></h2>
+        <h2 class="text-4xl font-bold text-gray-800 text-center mb-2">Erlernte <span class="bg-gradient-to-r from-emerald-500 to-blue-500 bg-clip-text text-transparent">Technologien</span></h2>
         <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mt-4"></div>
       </div>
 
