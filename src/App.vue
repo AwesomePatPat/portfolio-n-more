@@ -127,15 +127,6 @@ export default defineComponent({
   },
   {
     id: 6,
-    title: 'Applikationsentwickler@NexCC',
-    description: 'Im NexCC konnte ich Applikationen mithilfe von Vue.js, Express.js, PowerApps und PowerAutomate entwickeln.',
-    longDescription: 'Im Next Competence Center hatte ich die Möglichkeit mir viele Technologien anzueignen. Begonnen habe ich mit einer Einstiegsaufgabe mit Vue.js im Frontend und Express.js im Backend. Später habe ich das erste Mal eine Applikation mit einem Low Code Programm mit dem Namen PowerApps umgesetzt. Berechtigungsverwaltung und Automatisationen habe ich mit PowerAutomate umgesetzt. Im Projekt hatte ich auch die Möglichkeit in den Support zu schnuppern.',
-    provider: 'Urs Gloggner',
-    technologies: ['Vue.js', 'Express.js', 'Type Script', 'PowerApps', "Sharepoint", "PowerAutomate"],
-    icon: 'terminal'
-  },
-  {
-    id: 7,
     title: 'PA@NexCC',
     description: 'Ich hatte die Möglichkeit ein zweites Projekt bei NexCC als Projektanbieter zu machen.',
     longDescription: 'Nach meinem Projekt "Applikationsentwickler@NexCC" hatte ich die Möglichkeit ein weiteres Projekt beim Next Competence Center als Projektanbieter zu absolvieren. Hierbei musste ich viel Verantwortung tragen da mein ursprünglicher Projektanbieter für eine längere Zeit ausgefallen ist und ich statt einem Lernenden gleich zwei betreuen durfte. Ich habe den Lernenden Colin Walker und Nico Benninger zu Beginn einen Einstieg in Vue.js gegeben. Dies konnten sie bei ihrer Einstiegsaufgabe und kurz danach auch beim Projektarchiv anwenden. Dieses haben wir mit Vue.js, Nest.js und einer Docker Pipeline innerhalb von 6 Tagen umgesetzt. Anschliessend habe ich ihnen auch den Einstieg in die Power Plattformen PowerApps, PowerAutomate und Sharepoint gegeben. Sie hatten auch die Möglichkeit Einblicke in den Support zu gewinnen. Als die Lernenden fleissig am Arbeiten waren, habe ich auch einige Tools in PowerApps umgesetzt und am Projektarchiv gearbeitet.',
@@ -144,7 +135,7 @@ export default defineComponent({
     icon: 'clipboard-list'
   },
   {
-    id: 8,
+    id: 7,
     title: '???',
     description: 'Hier ist Platz für mein Projekt bei dir.',
     longDescription: 'Hier ist Platz für mein Projekt bei dir.',
