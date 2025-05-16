@@ -134,8 +134,17 @@ export default defineComponent({
     technologies: ['Vue.js', 'Nest.js', 'Type Script', 'PowerApps', "Sharepoint", "PowerAutomate", "Docker", "Git", "Prisma", "iAPC"],
     icon: 'clipboard-list'
   },
-  {
+    {
     id: 7,
+    title: 'AI@Nex',
+    description: 'Noch in der Zukunft',
+    longDescription: 'Noch in der Zukunft',
+    provider: 'Waser Sven',
+    technologies: [],
+    icon: 'server'
+  },
+  {
+    id: 8,
     title: '???',
     description: 'Hier ist Platz für mein Projekt bei dir.',
     longDescription: 'Hier ist Platz für mein Projekt bei dir.',
