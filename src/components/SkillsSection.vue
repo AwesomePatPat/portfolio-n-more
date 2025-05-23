@@ -3,9 +3,7 @@
   <section
     :id="id"
     class="py-20 relative"
-    v-motion
-    :initial="{ opacity: 0 }"
-    :visible="{ opacity: 1, transition: { duration: 800 } }"
+    ref="skillsSection"
   >
     <!-- Entfernen des vollständigen Hintergrunds, nur lokale Akzente für nahtlosen Übergang -->
     <div class="absolute inset-0 z-0">
@@ -24,15 +22,17 @@
         <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mt-4"></div>
       </div>
 
-      <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5" ref="skillsGrid">
         <div
           v-for="(skill, index) in skills"
           :key="skill.name"
-          v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :visible="{ opacity: 1, y: 0, transition: { delay: index * 100 } }"
+          :ref="el => setSkillRef(el, index)"
           class="relative skill-card"
-          :class="`skill-card-${skill.color}`"
+          :class="[
+            `skill-card-${skill.color}`,
+            { 'animate-in': animatedSkills[index] }
+          ]"
+          :style="{ animationDelay: `${index * 150}ms` }"
         >
           <div class="skill-card-content">
             <div class="flex flex-col items-center">
@@ -78,7 +78,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref, onMounted, onUnmounted, nextTick, type ComponentPublicInstance } from 'vue'
 import type { PropType } from 'vue'
 import type { Skill } from '../types'
 
@@ -92,6 +92,78 @@ export default defineComponent({
     skills: {
       type: Array as PropType<Skill[]>,
       required: true
+    }
+  },
+  setup(props) {
+    const skillsSection = ref<HTMLElement>()
+    const skillsGrid = ref<HTMLElement>()
+    const skillRefs = ref<(HTMLElement | null)[]>([])
+    const animatedSkills = ref<boolean[]>([])
+    const observer = ref<IntersectionObserver | null>(null)
+
+    // Initialize animated skills array
+    const initAnimatedSkills = () => {
+      animatedSkills.value = new Array(props.skills.length).fill(false)
+    }
+
+    // Set skill refs
+    const setSkillRef = (el: Element | ComponentPublicInstance | null, index: number) => {
+      // Only store if it's an HTMLElement
+      if (el instanceof HTMLElement) {
+        skillRefs.value[index] = el
+      } else {
+        skillRefs.value[index] = null
+      }
+    }
+
+    // Setup intersection observer
+    const setupObserver = () => {
+      observer.value = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = skillRefs.value.indexOf(entry.target as HTMLElement)
+              if (index !== -1 && !animatedSkills.value[index]) {
+                // Delay animation based on index
+                setTimeout(() => {
+                  animatedSkills.value[index] = true
+                }, index * 150)
+              }
+            }
+          })
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        }
+      )
+
+      // Observe all skill cards
+      nextTick(() => {
+        skillRefs.value.forEach((ref) => {
+          if (ref && observer.value) {
+            observer.value.observe(ref)
+          }
+        })
+      })
+    }
+
+    onMounted(() => {
+      initAnimatedSkills()
+      setupObserver()
+    })
+
+    onUnmounted(() => {
+      if (observer.value) {
+        observer.value.disconnect()
+      }
+    })
+
+    return {
+      skillsSection,
+      skillsGrid,
+      animatedSkills,
+      setSkillRef
     }
   },
   methods: {
@@ -131,9 +203,17 @@ export default defineComponent({
   box-shadow: 0 0 10px 0 rgba(16, 185, 129, 0.3);
 }
 
-/* Skill Card Styling */
+/* Skill Card Base Styling - Einheitliche Animation für alle */
 .skill-card {
-  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Einheitliche Animation für alle Skills */
+.skill-card.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .skill-card-content {
