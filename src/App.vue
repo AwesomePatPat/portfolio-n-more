@@ -71,7 +71,8 @@ export default defineComponent({
       { name: 'AWS', color: 'orange' },
       { name: 'Firebase', color: 'yellow' },
       { name: 'Nuxt.js', color: 'purple' },
-
+      { name: 'Java', color: 'purple' },
+      { name: 'Springboot', color: 'purple' },
     ])
 
     const languages = ref<Language[]>([

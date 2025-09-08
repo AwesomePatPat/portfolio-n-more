@@ -186,6 +186,8 @@ export default defineComponent({
         "Nest.js": "🦁",
         "Angular": "A",
         "Nuxt.js": "N",
+        "Java": "☕",
+        "Springboot": "SB",
       };
 
       return iconMap[skillName] || "•";
