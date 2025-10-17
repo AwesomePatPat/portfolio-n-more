@@ -71,8 +71,12 @@ export default defineComponent({
       { name: 'AWS', color: 'orange' },
       { name: 'Firebase', color: 'yellow' },
       { name: 'Nuxt.js', color: 'purple' },
+      { name: 'React', color: 'blue' },
+      { name: 'Next.js', color: 'gray' },
       { name: 'Java', color: 'purple' },
       { name: 'Springboot', color: 'purple' },
+      { name: 'MCP', color: 'purple' },
+      { name: 'OpenTofu', color: 'green' }
     ])
 
     const languages = ref<Language[]>([
@@ -137,11 +141,11 @@ export default defineComponent({
   },
     {
     id: 7,
-    title: 'AI@Nex',
-    description: 'Noch in der Zukunft',
-    longDescription: 'Noch in der Zukunft',
-    provider: 'Waser Sven',
-    technologies: [],
+    title: 'Team Halo',
+    description: 'In diesem Projekt habe ich kentnisse in Java und in der Entwicklung von MCP erworben.',
+    longDescription: 'Im Projekt habe ich mit einer Starterapp begonnen um die erforderlichen Technologien (Springboot, AWS, MCP und weiteres) zu erlernen. Später haben wir an Produktiven Aufträgen gearbeitet, um interne Prozesse mit AI zu vereinfachen.',
+    provider: 'Gregory Hubacher',
+    technologies: ['Java', 'Springboot', 'AWS', 'MCP', 'AI'],
     icon: 'server'
   },
   {

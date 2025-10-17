@@ -51,7 +51,7 @@
               </span>
             </h1>
             <p class="text-xl text-gray-600 leading-relaxed max-w-xl">
-              Ich bin 17 Jahre alt und zurzeit in meinem zweiten Lehrjahr als Applikationsentwickler EFZ. Ich habe im Sommer 2023 meine Lehre bei Swisscom (Schweiz) AG gestartet.
+              Ich bin 17 Jahre alt und zurzeit in meinem dritten Lehrjahr als Applikationsentwickler EFZ. Ich habe im Sommer 2023 meine Lehre bei Swisscom (Schweiz) AG gestartet.
             </p>
           </div>
 

@@ -184,10 +184,14 @@ export default defineComponent({
         "CSS": "CSS",
         "Express.js": "Ex",
         "Nest.js": "🦁",
+        "React": "⚛️",
+        "Next.js": "▲",
         "Angular": "A",
         "Nuxt.js": "N",
         "Java": "☕",
         "Springboot": "SB",
+        "MCP": "🤖",
+        "OpenTofu": "OT"
       };
 
       return iconMap[skillName] || "•";
