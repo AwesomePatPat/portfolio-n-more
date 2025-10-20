@@ -16,6 +16,8 @@ export interface Project {
   longDescription?: string;
   provider?: string;
   technologies?: string[];
+  startDate?: string;
+  endDate?: string;
 }
 
 export interface NavItem {

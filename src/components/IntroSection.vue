@@ -57,9 +57,9 @@
 
           <div class="flex flex-wrap gap-2">
             <span class="skill-badge px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-sm text-gray-800">Vue.js</span>
-            <span class="skill-badge px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-sm text-gray-800">Express.js</span>
-            <span class="skill-badge px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-sm text-gray-800">Design</span>
-            <span class="skill-badge px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-sm text-gray-800">TailwindCSS</span>
+            <span class="skill-badge px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-sm text-gray-800">Nest.js</span>
+            <span class="skill-badge px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-sm text-gray-800">MCP</span>
+            <span class="skill-badge px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-sm text-gray-800">AWS</span>
           </div>
 
           <div class="flex flex-wrap gap-4 pt-4">

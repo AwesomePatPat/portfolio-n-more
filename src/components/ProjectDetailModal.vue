@@ -45,10 +45,20 @@
               <div class="font-medium">{{ project.provider }}</div>
             </div>
 
+            <!-- Zeitraum wenn vorhanden -->
+            <div v-if="project.startDate || project.endDate" class="mb-6">
+              <div class="text-sm text-gray-500 mb-1">Zeitraum</div>
+              <div class="font-medium">
+                <span v-if="project.startDate">{{ project.startDate }}</span>
+                <span v-if="project.startDate && project.endDate"> - </span>
+                <span v-if="project.endDate">{{ project.endDate }}</span>
+              </div>
+            </div>
+
             <!-- Ausführliche Beschreibung -->
             <div class="mb-6">
               <div class="text-sm text-gray-500 mb-1">Beschreibung</div>
-              <p class="text-gray-700">{{ project.longDescription || project.description }}</p>
+              <p class="text-gray-700" v-html="project.longDescription || project.description"></p>
             </div>
 
             <!-- Technologien wenn vorhanden -->
