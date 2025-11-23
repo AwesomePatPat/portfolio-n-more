@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "intro": "Intro",
+    "about": "About",
+    "skills": "Skills",
+    "languages": "Languages",
+    "projects": "Projects"
+  },
+  "intro": {
+    "badge": "Portfolio 2025",
+    "greeting": "Hello, I'm",
+    "name": "Patrick",
+    "description": "I'm 17 years old and currently in my third year of apprenticeship as an Application Developer EFZ. I started my apprenticeship at Swisscom (Switzerland) Ltd. in summer 2023.",
+    "cta": "Learn more",
+    "scroll": "Scroll for more"
+  },
+  "about": {
+    "badge": "About me",
+    "title": "My",
+    "titleHighlight": "Story",
+    "paragraph1": "I am a motivated developer with experience in creating user-friendly web applications. My journey began with HTML and CSS and led me to mastering modern frameworks like {vue} and {express}.",
+    "paragraph2": "In my first programming project at Swisscom, I had the opportunity to learn basic skills such as HTML, CSS and JavaScript. Later in the project, I got my first insight into the Angular framework.",
+    "paragraph3": "In later projects, I worked with Vue.js and Express.js. I also had the opportunity to mentor other apprentices and share my knowledge with them in the role of a project provider.",
+    "cta": "My Projects"
+  },
+  "skills": {
+    "badge": "Technical Profile",
+    "title": "Learned",
+    "titleHighlight": "Technologies"
+  },
+  "languages": {
+    "badge": "My Skills",
+    "title": "Language",
+    "titleHighlight": "Proficiency",
+    "levels": {
+      "native": "Native Speaker",
+      "fluent": "Fluent",
+      "basic": "Basic Knowledge"
+    },
+    "list": [
+      {
+        "name": "German",
+        "level": "Native Speaker"
+      },
+      {
+        "name": "English",
+        "level": "Fluent"
+      },
+      {
+        "name": "French",
+        "level": "Fluent"
+      }
+    ]
+  },
+  "projects": {
+    "badge": "Portfolio",
+    "title": "My",
+    "titleHighlight": "Projects at Swisscom",
+    "button": "More Details",
+    "modal": {
+      "technologies": "Technologies Used",
+      "description": "Description",
+      "close": "Close",
+      "provider": "Project Provider",
+      "period": "Period"
+    },
+    "list": [
+      {
+        "id": 1,
+        "title": "FirstSteps",
+        "description": "Getting started at Swisscom",
+        "longDescription": "I started my apprenticeship in the First Steps. There I learned everything about Swisscom and set up my work devices with various tools and also learned how to use them. We also looked at topics such as occupational safety. They served to prepare us for the apprenticeship.",
+        "provider": "Andreas Mast",
+        "startDate": "02.08.2023",
+        "endDate": "13.08.2023"
+      },
+      {
+        "id": 2,
+        "title": "Team HIVE",
+        "description": "Introduction to programming",
+        "longDescription": "In Team HIVE I had my introduction to programming. I learned the basics of HTML, CSS, JS, TS, Angular and GIT. I also learned to work in an agile manner and became familiar with the Jira tool. We were able to implement these technologies in many different practical exercises. In the project, we had the freedom to work at our own pace and acquire a good basic knowledge for the apprenticeship.",
+        "provider": "Patrice Stämpfli",
+        "startDate": "14.08.2023",
+        "endDate": "31.01.2024"
+      },
+      {
+        "id": 3,
+        "title": "Minds in the Cloud",
+        "description": "Leading a group of apprentices in the field of Cloud & IT",
+        "longDescription": "My colleagues Janic Moos and Panat Ruangsri, together with me, led the Minds in the Clouds group (a group of apprentices in the field of Cloud & IT). We met once a month, when possible, to exchange ideas and discuss various topics. It also served us to make new contacts, which is very important in professional life. My colleagues and I led and planned the team meetings and organized tours when the group agreed. This resulted, for example, in a tour of the Swisscom data center in Wankdorf. This was a side project.",
+        "startDate": "14.08.2023",
+        "endDate": "31.07.2024"
+      },
+      {
+        "id": 4,
+        "title": "Core Automation Team (CAT)",
+        "description": "In this team I got to know the technologies Vue.js and Nuxt.js",
+        "longDescription": "I was welcomed into the agile Core Automation Team (CAT) in February 2024. In this team, I got to know the technologies Vue.js and Nuxt.js. I was able to work on a website from the very beginning, which shows all the automations of our team. Until the end, I was able to work on this page until the final touches. In this team, we worked according to the agile sAFE.",
+        "provider": "János Horváth",
+        "startDate": "01.02.2024",
+        "endDate": "31.07.2024"
+      },
+      {
+        "id": 5,
+        "title": "Application Developer@NexCC",
+        "description": "At NexCC I was able to develop applications using Vue.js, Express.js, PowerApps and PowerAutomate.",
+        "longDescription": "At the Next Competence Center, I had the opportunity to acquire many technologies. I started with an introductory task with Vue.js in the frontend and Express.js in the backend. Later I implemented an application for the first time with a low-code program called PowerApps. I implemented permission management and automation with PowerAutomate. In the project, I also had the opportunity to get a taste of support.",
+        "provider": "Urs Gloggner",
+        "startDate": "12.08.2024",
+        "endDate": "31.01.2025"
+      },
+      {
+        "id": 6,
+        "title": "PA@NexCC",
+        "description": "I had the opportunity to do a second project at NexCC as a project provider.",
+        "longDescription": "After my project \"Application Developer@NexCC\" I had the opportunity to complete another project at the Next Competence Center as a project provider. I had to take on a lot of responsibility, as my original project provider was absent for a longer period of time and I was allowed to supervise two apprentices instead of one. I gave the apprentices Colin Walker and Nico Benninger an introduction to Vue.js at the beginning. They were able to apply this in their introductory task and shortly afterwards also in the <a href=\"https://projektarchiv.scapp.swisscom.com/\" target=\"_blank\" class=\"text-white hover:text-white/80 underline\">Project Archive</a>. We implemented this with Vue.js, Nest.js and a Docker pipeline within 6 days. I then also gave them an introduction to the Power Platforms PowerApps, PowerAutomate and Sharepoint. They also had the opportunity to gain insights into support. While the apprentices were working diligently, I also implemented some tools in PowerApps and worked on the <a href=\"https://projektarchiv.scapp.swisscom.com/\" target=\"_blank\" class=\"text-white hover:text-white/80 underline\">Project Archive</a>.",
+        "provider": "Janis Ringli",
+        "startDate": "03.02.2025",
+        "endDate": "03.08.2025"
+      },
+      {
+        "id": 7,
+        "title": "Team Halo",
+        "description": "In this project, I acquired knowledge in Java and in the development of MCP.",
+        "longDescription": "In the project, I started with a starter app to learn the required technologies (Springboot, AWS, MCP and more). Later we worked on productive orders to simplify internal processes with AI.",
+        "provider": "Gregory Hubacher",
+        "startDate": "04.08.2025",
+        "endDate": "30.01.2026"
+      },
+      {
+        "id": 8,
+        "title": "???",
+        "description": "Here is space for my project with you.",
+        "longDescription": "Here is space for my project with you.",
+        "provider": "???",
+        "startDate": "???",
+        "endDate": "???"
+      }
+    ]
+  }
+}

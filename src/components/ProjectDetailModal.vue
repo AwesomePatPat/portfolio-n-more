@@ -4,14 +4,14 @@
     <div v-if="show" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
       <!-- Hintergrund-Overlay mit Animation -->
       <div
-        class="fixed inset-0 bg-gray-700/50 backdrop-blur-sm transition-opacity"
+        class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity"
         @click="close"
       ></div>
 
       <!-- Modal-Container -->
       <div class="flex items-center justify-center min-h-screen p-4 text-center sm:p-0">
         <div
-          class="relative bg-white rounded-xl overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-2xl w-full"
+          class="relative bg-black/70 border border-white/20 rounded-xl overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-2xl w-full"
           v-motion
           :initial="{ opacity: 0, scale: 0.9 }"
           :enter="{ opacity: 1, scale: 1, transition: { duration: 300 } }"
@@ -19,7 +19,7 @@
           <!-- Close Button -->
           <button
             type="button"
-            class="absolute top-4 right-4 text-gray-400 focus:outline-none z-10 close-button"
+            class="absolute top-4 right-4 text-white/70 focus:outline-none z-10 close-button"
             @click="close"
           >
             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -31,24 +31,24 @@
           <div class="px-6 pt-6 pb-8">
             <!-- Header mit Projekt-Icon und Titel -->
             <div class="flex items-center mb-6">
-              <div class="w-14 h-14 rounded-lg bg-gradient-to-br from-emerald-50 to-blue-50 flex items-center justify-center mr-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div class="w-14 h-14 rounded-lg bg-white/10 flex items-center justify-center mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="getIconPath(project.icon)" />
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold text-gray-800">{{ project.title }}</h3>
+              <h3 class="text-2xl font-bold text-white">{{ project.title }}</h3>
             </div>
 
             <!-- Provider wenn vorhanden -->
             <div v-if="project.provider" class="mb-6">
-              <div class="text-sm text-gray-500 mb-1">Projektanbieter</div>
-              <div class="font-medium">{{ project.provider }}</div>
+              <div class="text-sm text-white/60 mb-1">{{ $t('projects.modal.provider') }}</div>
+              <div class="font-medium text-white">{{ project.provider }}</div>
             </div>
 
             <!-- Zeitraum wenn vorhanden -->
             <div v-if="project.startDate || project.endDate" class="mb-6">
-              <div class="text-sm text-gray-500 mb-1">Zeitraum</div>
-              <div class="font-medium">
+              <div class="text-sm text-white/60 mb-1">{{ $t('projects.modal.period') }}</div>
+              <div class="font-medium text-white">
                 <span v-if="project.startDate">{{ project.startDate }}</span>
                 <span v-if="project.startDate && project.endDate"> - </span>
                 <span v-if="project.endDate">{{ project.endDate }}</span>
@@ -57,18 +57,18 @@
 
             <!-- Ausführliche Beschreibung -->
             <div class="mb-6">
-              <div class="text-sm text-gray-500 mb-1">Beschreibung</div>
-              <p class="text-gray-700" v-html="project.longDescription || project.description"></p>
+              <div class="text-sm text-white/60 mb-1">{{ $t('projects.modal.description') }}</div>
+              <p class="text-white/80" v-html="project.longDescription || project.description"></p>
             </div>
 
             <!-- Technologien wenn vorhanden -->
             <div v-if="project.technologies && project.technologies.length > 0" class="mb-6">
-              <div class="text-sm text-gray-500 mb-2">Skills</div>
+              <div class="text-sm text-white/60 mb-2">{{ $t('projects.modal.technologies') }}</div>
               <div class="flex flex-wrap gap-2">
                 <span
                   v-for="tech in project.technologies"
                   :key="tech"
-                  class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
+                  class="px-3 py-1 bg-white/10 text-white border border-white/20 text-sm rounded-full"
                 >
                   {{ tech }}
                 </span>
@@ -162,6 +162,6 @@ export default defineComponent({
 
 /* Hover Effects */
 .close-button:hover {
-  color: #6b7280; /* text-gray-500 equivalent */
+  color: rgba(255, 255, 255, 0.7);
 }
 </style>

@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "intro": "Intro",
+    "about": "À propos",
+    "skills": "Compétences",
+    "languages": "Langues",
+    "projects": "Projets"
+  },
+  "intro": {
+    "badge": "Portfolio 2025",
+    "greeting": "Bonjour, je suis",
+    "name": "Patrick",
+    "description": "J'ai 17 ans et je suis actuellement dans ma troisième année d'apprentissage en tant que développeur d'applications CFC. J'ai commencé mon apprentissage chez Swisscom (Suisse) SA à l'été 2023.",
+    "cta": "En savoir plus",
+    "scroll": "Faites défiler pour plus"
+  },
+  "about": {
+    "badge": "À propos de moi",
+    "title": "Mon",
+    "titleHighlight": "Histoire",
+    "paragraph1": "Je suis un développeur motivé avec de l'expérience dans la création d'applications web conviviales. Mon parcours a commencé avec HTML et CSS et m'a conduit à maîtriser des frameworks modernes comme {vue} et {express}.",
+    "paragraph2": "Dans mon premier projet de programmation chez Swisscom, j'ai eu l'opportunité d'apprendre les compétences de base telles que HTML, CSS et JavaScript. Plus tard dans le projet, j'ai eu mon premier aperçu du framework Angular.",
+    "paragraph3": "Dans les projets ultérieurs, j'ai travaillé avec Vue.js et Express.js. J'ai également eu l'opportunité d'encadrer d'autres apprentis et de partager mes connaissances avec eux dans le rôle de fournisseur de projet.",
+    "cta": "Mes Projets"
+  },
+  "skills": {
+    "badge": "Profil Technique",
+    "title": "Technologies",
+    "titleHighlight": "Apprises"
+  },
+  "languages": {
+    "badge": "Mes Compétences",
+    "title": "Compétences",
+    "titleHighlight": "Linguistiques",
+    "levels": {
+      "native": "Langue Maternelle",
+      "fluent": "Courant",
+      "basic": "Connaissances de Base"
+    },
+    "list": [
+      {
+        "name": "Allemand",
+        "level": "Langue Maternelle"
+      },
+      {
+        "name": "Anglais",
+        "level": "Courant"
+      },
+      {
+        "name": "Français",
+        "level": "Courant"
+      }
+    ]
+  },
+  "projects": {
+    "badge": "Portfolio",
+    "title": "Mes",
+    "titleHighlight": "Projets chez Swisscom",
+    "button": "Plus de Détails",
+    "modal": {
+      "technologies": "Technologies Utilisées",
+      "description": "Description",
+      "close": "Fermer",
+      "provider": "Fournisseur de Projet",
+      "period": "Période"
+    },
+    "list": [
+      {
+        "id": 1,
+        "title": "FirstSteps",
+        "description": "Débuter chez Swisscom",
+        "longDescription": "J'ai commencé mon apprentissage dans les First Steps. Là, j'ai appris tout sur Swisscom et j'ai configuré mes appareils de travail avec différents outils et j'ai également appris à les utiliser. Nous avons également examiné des sujets tels que la sécurité au travail. Ils ont servi à nous préparer à l'apprentissage.",
+        "provider": "Andreas Mast",
+        "startDate": "02.08.2023",
+        "endDate": "13.08.2023"
+      },
+      {
+        "id": 2,
+        "title": "Team HIVE",
+        "description": "Introduction à la programmation",
+        "longDescription": "Dans l'équipe HIVE, j'ai eu mon introduction à la programmation. J'ai appris les bases de HTML, CSS, JS, TS, Angular et GIT. J'ai également appris à travailler de manière agile et me suis familiarisé avec l'outil Jira. Nous avons pu mettre en œuvre ces technologies dans de nombreux exercices pratiques différents. Dans le projet, nous avions la liberté de travailler à notre propre rythme et d'acquérir de bonnes connaissances de base pour l'apprentissage.",
+        "provider": "Patrice Stämpfli",
+        "startDate": "14.08.2023",
+        "endDate": "31.01.2024"
+      },
+      {
+        "id": 3,
+        "title": "Minds in the Cloud",
+        "description": "Direction d'un groupe d'apprentis dans le domaine du Cloud & IT",
+        "longDescription": "Mes collègues Janic Moos et Panat Ruangsri, avec moi, ont dirigé le groupe Minds in the Clouds (un groupe d'apprentis dans le domaine du Cloud & IT). Nous nous sommes rencontrés une fois par mois, si possible, pour échanger des idées et discuter de divers sujets. Cela nous a également servi à établir de nouveaux contacts, ce qui est très important dans la vie professionnelle. Mes collègues et moi avons dirigé et planifié les réunions d'équipe et organisé des visites lorsque le groupe était d'accord. Cela a abouti, par exemple, à une visite du centre de données Swisscom à Wankdorf. C'était un projet parallèle.",
+        "startDate": "14.08.2023",
+        "endDate": "31.07.2024"
+      },
+      {
+        "id": 4,
+        "title": "Core Automation Team (CAT)",
+        "description": "Dans cette équipe, j'ai découvert les technologies Vue.js et Nuxt.js",
+        "longDescription": "J'ai été accueilli dans l'équipe agile Core Automation Team (CAT) en février 2024. Dans cette équipe, j'ai découvert les technologies Vue.js et Nuxt.js. J'ai pu travailler dès le début sur un site web qui présente toutes les automatisations de notre équipe. Jusqu'à la fin, j'ai pu travailler sur cette page jusqu'aux dernières retouches. Dans cette équipe, nous avons travaillé selon l'agilité sAFE.",
+        "provider": "János Horváth",
+        "startDate": "01.02.2024",
+        "endDate": "31.07.2024"
+      },
+      {
+        "id": 5,
+        "title": "Développeur d'Applications@NexCC",
+        "description": "Au NexCC, j'ai pu développer des applications en utilisant Vue.js, Express.js, PowerApps et PowerAutomate.",
+        "longDescription": "Au Next Competence Center, j'ai eu l'opportunité d'acquérir de nombreuses technologies. J'ai commencé par une tâche d'introduction avec Vue.js dans le frontend et Express.js dans le backend. Plus tard, j'ai implémenté pour la première fois une application avec un programme low-code appelé PowerApps. J'ai implémenté la gestion des autorisations et l'automatisation avec PowerAutomate. Dans le projet, j'ai également eu l'occasion de goûter au support.",
+        "provider": "Urs Gloggner",
+        "startDate": "12.08.2024",
+        "endDate": "31.01.2025"
+      },
+      {
+        "id": 6,
+        "title": "PA@NexCC",
+        "description": "J'ai eu l'opportunité de faire un deuxième projet au NexCC en tant que fournisseur de projet.",
+        "longDescription": "Après mon projet \"Développeur d'Applications@NexCC\", j'ai eu l'opportunité de réaliser un autre projet au Next Competence Center en tant que fournisseur de projet. J'ai dû assumer beaucoup de responsabilités, car mon fournisseur de projet d'origine était absent pendant une période prolongée et j'ai été autorisé à superviser deux apprentis au lieu d'un. J'ai donné aux apprentis Colin Walker et Nico Benninger une introduction à Vue.js au début. Ils ont pu l'appliquer dans leur tâche d'introduction et peu de temps après également dans les <a href=\"https://projektarchiv.scapp.swisscom.com/\" target=\"_blank\" class=\"text-white hover:text-white/80 underline\">Archives de Projet</a>. Nous l'avons implémenté avec Vue.js, Nest.js et un pipeline Docker en 6 jours. Je leur ai ensuite également donné une introduction aux plateformes Power PowerApps, PowerAutomate et Sharepoint. Ils ont également eu l'opportunité d'obtenir des informations sur le support. Pendant que les apprentis travaillaient avec diligence, j'ai également implémenté quelques outils dans PowerApps et travaillé sur les <a href=\"https://projektarchiv.scapp.swisscom.com/\" target=\"_blank\" class=\"text-white hover:text-white/80 underline\">Archives de Projet</a>.",
+        "provider": "Janis Ringli",
+        "startDate": "03.02.2025",
+        "endDate": "03.08.2025"
+      },
+      {
+        "id": 7,
+        "title": "Team Halo",
+        "description": "Dans ce projet, j'ai acquis des connaissances en Java et dans le développement de MCP.",
+        "longDescription": "Dans le projet, j'ai commencé avec une application de démarrage pour apprendre les technologies requises (Springboot, AWS, MCP et plus). Plus tard, nous avons travaillé sur des commandes productives pour simplifier les processus internes avec l'IA.",
+        "provider": "Gregory Hubacher",
+        "startDate": "04.08.2025",
+        "endDate": "30.01.2026"
+      },
+      {
+        "id": 8,
+        "title": "???",
+        "description": "Voici de la place pour mon projet avec vous.",
+        "longDescription": "Voici de la place pour mon projet avec vous.",
+        "provider": "???",
+        "startDate": "???",
+        "endDate": "???"
+      }
+    ]
+  }
+}

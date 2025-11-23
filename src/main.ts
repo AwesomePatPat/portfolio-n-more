@@ -1,7 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-  import './assets/main.css'
+import './assets/main.css'
 import { MotionPlugin } from '@vueuse/motion'
+import i18n from './i18n'
 
-createApp(App).mount('#app')
-App.use(MotionPlugin)
+const app = createApp(App)
+app.use(MotionPlugin)
+app.use(i18n)
+app.mount('#app')

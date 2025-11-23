@@ -9,19 +9,17 @@
   >
     <!-- Lokale Akzente statt vollständigem Hintergrund -->
     <div class="absolute inset-0 z-0">
-      <!-- Lokale Farbakzente, die sich mit dem globalen Hintergrund vermischen -->
-      <div class="absolute top-1/4 left-1/3 w-72 h-72 rounded-full bg-blue-100/20 filter blur-3xl"></div>
-      <div class="absolute bottom-1/4 right-1/3 w-72 h-72 rounded-full bg-emerald-100/20 filter blur-3xl"></div>
+      <!-- Removed colored gradients for dark theme -->
     </div>
 
     <div class="container mx-auto px-6 relative z-10">
       <!-- Überschrift im hellen Design -->
       <div class="flex flex-col items-center mb-16">
-        <div class="portfolio-badge inline-block px-4 py-1 rounded-full bg-white border border-gray-200 text-sm font-medium text-emerald-600 mb-4">
-          Portfolio
+        <div class="portfolio-badge inline-block px-4 py-1 rounded-full bg-white/10 border border-blue-500/40 text-sm font-medium text-white mb-4">
+          {{ $t('projects.badge') }}
         </div>
-        <h2 class="text-4xl font-bold text-gray-800 text-center mb-2">Meine <span class="bg-gradient-to-r from-emerald-500 to-blue-500 bg-clip-text text-transparent">Projekte bei Swisscom</span></h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mt-4"></div>
+        <h2 class="text-4xl font-bold text-white text-center mb-2">{{ $t('projects.title') }} <span class="text-white">{{ $t('projects.titleHighlight') }}</span></h2>
+        <div class="w-24 h-1 bg-blue-500 rounded-full mt-4"></div>
       </div>
 
       <!-- Projekte mit verbesserten Hover-Effekten -->
@@ -35,60 +33,60 @@
           class="project-card-wrapper relative group"
         >
           <!-- Projekt-Karte mit Hover-Effekten -->
-          <div class="project-card h-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md p-6 relative z-10">
+          <div class="project-card h-full bg-black/50 border border-white/20 rounded-xl overflow-hidden shadow-md p-6 relative z-10">
             <div class="flex flex-col h-full">
               <!-- Icon mit Animation -->
-              <div class="project-icon mb-6 w-16 h-16 rounded-lg bg-gradient-to-br from-emerald-50 to-blue-50 flex items-center justify-center mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div class="project-icon mb-6 w-16 h-16 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="getIconPath(project.icon)" />
                 </svg>
               </div>
 
               <!-- Projekt-Titel mit Unterstrich-Animation -->
-              <h3 class="project-title text-xl font-semibold text-center mb-3 text-gray-800 relative">
+              <h3 class="project-title text-xl font-semibold text-center mb-3 text-white relative">
                 {{ project.title }}
                 <!-- Animierter Unterstrich beim Hover -->
-                <div class="project-underline absolute left-1/2 bottom-0 h-0.5 bg-gradient-to-r from-emerald-500 to-blue-500 transform -translate-x-1/2"></div>
+                <div class="project-underline absolute left-1/2 bottom-0 h-0.5 bg-blue-500 transform -translate-x-1/2"></div>
               </h3>
 
-              <p class="text-gray-600 text-center flex-grow">{{ project.description }}</p>
+              <p class="text-white/70 text-center flex-grow">{{ project.description }}</p>
 
               <!-- Interaktiver Button - Klickevent hinzugefügt -->
               <div class="mt-6 flex justify-center">
                 <button
-                  class="details-button group relative px-4 py-2 text-sm rounded-md bg-white border border-gray-300 text-gray-700 overflow-hidden"
+                  class="details-button group relative px-4 py-2 text-sm rounded-md bg-blue-600 border border-blue-500 text-white overflow-hidden"
                   @click="openProjectDetail(project)"
                 >
                   <span class="relative z-10 flex items-center">
-                    Mehr Details
+                    {{ $t('projects.button') }}
                     <svg xmlns="http://www.w3.org/2000/svg" class="details-arrow h-4 w-4 ml-1 transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </span>
                   <!-- Subtiler Hover-Effekt -->
-                  <span class="details-background absolute inset-0 bg-gradient-to-r from-emerald-50 to-blue-50 transform scale-x-0 origin-left"></span>
+                  <span class="details-background absolute inset-0 bg-blue-700 transform scale-x-0 origin-left"></span>
                 </button>
               </div>
             </div>
           </div>
 
           <!-- Hintergrundeffekt -->
-          <div class="project-background absolute inset-0 bg-gradient-to-br from-emerald-100/30 to-blue-100/30 rounded-xl translate-x-2 translate-y-2"></div>
+          <div class="project-background absolute inset-0 bg-white/10 rounded-xl translate-x-2 translate-y-2"></div>
         </div>
       </div>
 
       <!-- Dezente Dekorationselemente -->
       <div class="hidden lg:block absolute bottom-20 left-10 w-16 h-16 float-slow">
         <div class="relative w-full h-full">
-          <div class="absolute inset-0 border border-gray-200 rounded-md rotate-45"></div>
-          <div class="absolute inset-0 border border-gray-200 rounded-md rotate-[30deg]"></div>
+          <div class="absolute inset-0 border border-white/20 rounded-md rotate-45"></div>
+          <div class="absolute inset-0 border border-white/20 rounded-md rotate-[30deg]"></div>
         </div>
       </div>
 
       <div class="hidden lg:block absolute top-20 right-10 w-20 h-20 float-fast">
         <div class="relative w-full h-full">
-          <div class="absolute inset-0 border border-gray-200 rounded-full"></div>
-          <div class="absolute inset-0 scale-75 border border-gray-200 rounded-full"></div>
+          <div class="absolute inset-0 border border-white/20 rounded-full"></div>
+          <div class="absolute inset-0 scale-75 border border-white/20 rounded-full"></div>
         </div>
       </div>
     </div>
@@ -199,7 +197,9 @@ export default defineComponent({
   transition: all 0.3s;
 }
 .portfolio-badge:hover {
-  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  border-color: rgba(59, 130, 246, 0.6);
+  background-color: rgba(59, 130, 246, 0.1);
 }
 
 /* Project Card */
@@ -209,15 +209,18 @@ export default defineComponent({
 .project-card-wrapper:hover .project-card {
   transform: translateY(-8px);
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  border-color: rgba(167, 243, 208, 1);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* Icon Animation */
 .project-icon {
-  transition: transform 0.5s;
+  transition: all 0.5s;
 }
 .project-card-wrapper:hover .project-icon {
   transform: scale(1.1);
+  background-color: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
 }
 
 /* Title Underline Animation */
@@ -234,8 +237,9 @@ export default defineComponent({
   transition: all 0.3s;
 }
 .details-button:hover {
-  color: rgb(16, 185, 129);
-  border-color: rgb(167, 243, 208);
+  background-color: rgb(29, 78, 216);
+  box-shadow: 0 8px 20px -3px rgba(37, 99, 235, 0.5);
+  border-color: rgb(59, 130, 246);
 }
 
 /* Arrow Animation */

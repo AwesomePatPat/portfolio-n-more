@@ -9,49 +9,43 @@
   >
     <!-- Lokale Akzente, aber kein vollständiger Hintergrund mehr -->
     <div class="absolute inset-0 z-0">
-      <!-- Lokale Farbakzente, die sich mit dem globalen Hintergrund vermischen -->
-      <div class="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-emerald-100/20 filter blur-3xl"></div>
-      <div class="absolute bottom-1/3 left-1/4 w-64 h-64 rounded-full bg-blue-100/20 filter blur-3xl"></div>
+      <!-- Removed colored gradients for dark theme -->
     </div>
 
     <!-- Hauptinhalt -->
     <div class="container mx-auto px-6 relative z-10">
       <div class="flex flex-col items-center mb-16">
         <!-- Überschrift im hellen Design -->
-        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white border border-gray-200 text-sm font-medium text-emerald-600 mb-4 hover-glow">
-          <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-          <span>Über mich</span>
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-white mb-4 hover-glow">
+          <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+          <span>{{ $t('about.badge') }}</span>
         </div>
-        <h2 class="text-4xl font-bold text-gray-800 text-center mb-2">Meine <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-blue-500">Geschichte</span></h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mt-4"></div>
+        <h2 class="text-4xl font-bold text-white text-center mb-2">{{ $t('about.title') }} <span class="text-white">{{ $t('about.titleHighlight') }}</span></h2>
+        <div class="w-24 h-1 bg-blue-500 rounded-full mt-4"></div>
       </div>
 
       <!-- About Content mit hellem Design und verbesserten Hover-Effekten -->
-      <div class="max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md transition-all duration-500 hover-lift">
+      <div class="max-w-4xl mx-auto bg-black/50 border border-white/20 rounded-2xl overflow-hidden shadow-md transition-all duration-500 hover-lift">
         <div class="p-8 md:p-10">
           <!-- Bio-Text -->
-          <div class="space-y-6 text-gray-700">
+          <div class="space-y-6 text-white/80">
             <p class="text-lg leading-relaxed">
-              Ich bin ein motivierter Entwickler mit Erfahrung in der Erstellung
-              benutzerfreundlicher Webanwendungen. Meine Reise begann mit HTML und CSS und führte mich zur Beherrschung
-              moderner Frameworks wie <span class="text-emerald-600 tech-highlight">Vue.js</span> und <span class="text-blue-600 tech-highlight">Express.js</span>.
+              {{ $t('about.paragraph1', { vue: 'Vue.js', express: 'Express.js' }) }}
             </p>
             <p class="text-lg leading-relaxed">
-              In meinem ersten Programmier-Projekt bei Swisscom hatte ich die Möglichkeit die Basic Skills wie HTML, CSS und JavaScript zu lernen.
-              Später im Projekt habe ich dann den ersten Einblick in das Framework Angular bekommen.
+              {{ $t('about.paragraph2') }}
             </p>
             <p class="text-lg leading-relaxed">
-              In späteren Projekten habe ich dann mit Vue.js und Express.js gearbeitet. Ich hatte auch die Möglichkeit andere Lernende zu betreuen und ihnen mein Wissen weiterzugeben als Rolle eines Projektanbieters.
-
+              {{ $t('about.paragraph3') }}
             </p>
 
             <!-- Call to Action mit verbessertem Hover-Effekt -->
             <div class="pt-6">
               <a
                 href="#projects"
-                class="cta-button group relative px-6 py-3 rounded-md bg-emerald-500 text-white font-medium shadow-md inline-flex items-center overflow-hidden"
+                class="cta-button group relative px-6 py-3 rounded-md bg-blue-600 text-white font-medium shadow-md inline-flex items-center overflow-hidden"
               >
-                <span class="relative z-10">Meine Projekte</span>
+                <span class="relative z-10">{{ $t('about.cta') }}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 relative z-10 arrow-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -67,23 +61,23 @@
     <!-- Dekorative Elemente im hellen Design -->
     <div class="hidden lg:block absolute bottom-20 left-10 w-24 h-24 float-slow">
       <div class="relative w-full h-full">
-        <div class="absolute inset-0 border border-gray-200 rounded-full"></div>
-        <div class="absolute inset-0 scale-75 border border-gray-200 rounded-full"></div>
-        <div class="absolute inset-0 scale-50 border border-gray-200 rounded-full"></div>
+        <div class="absolute inset-0 border border-white/20 rounded-full"></div>
+        <div class="absolute inset-0 scale-75 border border-white/20 rounded-full"></div>
+        <div class="absolute inset-0 scale-50 border border-white/20 rounded-full"></div>
       </div>
     </div>
 
     <div class="hidden lg:block absolute top-20 right-10 w-32 h-32 float-slow">
       <div class="relative w-full h-full">
-        <div class="absolute inset-0 border border-gray-200 rounded-md rotate-45"></div>
-        <div class="absolute inset-0 border border-gray-200 rounded-md rotate-[30deg]"></div>
-        <div class="absolute inset-0 border border-gray-200 rounded-md rotate-[60deg]"></div>
+        <div class="absolute inset-0 border border-white/20 rounded-md rotate-45"></div>
+        <div class="absolute inset-0 border border-white/20 rounded-md rotate-[30deg]"></div>
+        <div class="absolute inset-0 border border-white/20 rounded-md rotate-[60deg]"></div>
       </div>
     </div>
 
     <!-- Leichte schwebende Elemente -->
-    <div class="hidden md:block absolute top-40 right-20 w-16 h-16 rounded-full border border-gray-200 bg-white/50 float-slow"></div>
-    <div class="hidden md:block absolute bottom-40 left-20 w-24 h-24 rounded-full border border-gray-200 bg-white/50 float-fast"></div>
+    <div class="hidden md:block absolute top-40 right-20 w-16 h-16 rounded-full border border-blue-500/30 bg-blue-500/10 float-slow"></div>
+    <div class="hidden md:block absolute bottom-40 left-20 w-24 h-24 rounded-full border border-blue-500/30 bg-blue-500/10 float-fast"></div>
   </section>
 </template>
 
@@ -106,13 +100,14 @@ export default defineComponent({
 
 /* Glow-Effekt für die Überschrift "Über mich" */
 .hover-glow:hover {
-  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+  border-color: rgba(59, 130, 246, 0.4);
 }
 
 /* Lift-Effekt für die Biokarte */
 .hover-lift:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
 }
 
 /* Hervorhebung für Technologie-Namen */
@@ -120,12 +115,8 @@ export default defineComponent({
   transition: color 0.3s ease;
 }
 
-.tech-highlight.text-emerald-600:hover {
-  color: #059669; /* emerald-500 */
-}
-
-.tech-highlight.text-blue-600:hover {
-  color: #3b82f6; /* blue-500 */
+.tech-highlight.text-white:hover {
+  color: #ffffff;
 }
 
 /* CTA-Button Hover-Effekte */
@@ -134,8 +125,9 @@ export default defineComponent({
 }
 
 .cta-button:hover {
-  background-color: #059669; /* emerald-600 */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgb(29, 78, 216);
+  box-shadow: 0 10px 25px -3px rgba(37, 99, 235, 0.5), 0 10px 10px -5px rgba(59, 130, 246, 0.3);
+  transform: translateY(-2px);
 }
 
 /* Arrow Icon Animation in CTA Button */
@@ -154,7 +146,7 @@ export default defineComponent({
   left: 0;
   width: 100%;
   height: 0;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(29, 78, 216, 0.3);
   transition: all 0.5s ease;
 }
 

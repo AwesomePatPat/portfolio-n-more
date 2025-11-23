@@ -7,19 +7,17 @@
   >
     <!-- Entfernen des vollständigen Hintergrunds, nur lokale Akzente für nahtlosen Übergang -->
     <div class="absolute inset-0 z-0">
-      <!-- Lokale Farbakzente die sich mit dem globalen Hintergrund vermischen -->
-      <div class="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-emerald-100/20 filter blur-3xl"></div>
-      <div class="absolute bottom-1/4 left-1/4 w-64 h-64 rounded-full bg-blue-100/20 filter blur-3xl"></div>
+      <!-- Removed colored gradients for dark theme -->
     </div>
 
     <div class="container mx-auto px-6 relative z-10">
       <!-- Überschrift im hellen Design -->
       <div class="flex flex-col items-center mb-16">
-        <div class="inline-block px-4 py-1 rounded-full bg-white border border-gray-200 text-sm font-medium text-emerald-600 mb-4 hover-glow">
-          Technisches Profil
+        <div class="inline-block px-4 py-1 rounded-full bg-white/10 border border-blue-500/40 text-sm font-medium text-white mb-4 hover-glow">
+          {{ $t('skills.badge') }}
         </div>
-        <h2 class="text-4xl font-bold text-gray-800 text-center mb-2">Erlernte <span class="bg-gradient-to-r from-emerald-500 to-blue-500 bg-clip-text text-transparent">Technologien</span></h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mt-4"></div>
+        <h2 class="text-4xl font-bold text-white text-center mb-2">{{ $t('skills.title') }} <span class="text-white">{{ $t('skills.titleHighlight') }}</span></h2>
+        <div class="w-24 h-1 bg-blue-500 rounded-full mt-4"></div>
       </div>
 
       <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5" ref="skillsGrid">
@@ -38,18 +36,16 @@
             <div class="flex flex-col items-center">
               <!-- Skill icon -->
               <div class="skill-icon">
-                <div class="skill-icon-text">
-                  {{ getSkillIcon(skill.name) }}
-                </div>
+                <Icon :icon="getSkillIcon(skill.name)" class="skill-icon-svg" />
                 <!-- Subtiler Hintergrund-Effekt -->
-                <div class="skill-icon-bg"></div>
+                <div class="skill-icon-bg bg-blue-500/20"></div>
               </div>
 
               <!-- Skill name -->
               <h3 class="skill-name">
                 {{ skill.name }}
                 <!-- Subtiler Unterstrich -->
-                <span class="skill-underline"></span>
+                <span class="skill-underline bg-blue-500"></span>
               </h3>
             </div>
           </div>
@@ -62,15 +58,15 @@
       <!-- Dezente Dekorationselemente mit Animation -->
       <div class="hidden lg:block absolute top-40 right-20 w-16 h-16 float-slow">
         <div class="relative w-full h-full">
-          <div class="absolute inset-0 border border-gray-200 rounded-md rotate-45"></div>
-          <div class="absolute inset-0 border border-gray-200 rounded-md rotate-[30deg]"></div>
+          <div class="absolute inset-0 border border-white/20 rounded-md rotate-45"></div>
+          <div class="absolute inset-0 border border-white/20 rounded-md rotate-[30deg]"></div>
         </div>
       </div>
 
       <div class="hidden lg:block absolute bottom-40 left-20 w-24 h-24 float-fast">
         <div class="relative w-full h-full">
-          <div class="absolute inset-0 border border-gray-200 rounded-full"></div>
-          <div class="absolute inset-0 scale-75 border border-gray-200 rounded-full"></div>
+          <div class="absolute inset-0 border border-white/20 rounded-full"></div>
+          <div class="absolute inset-0 scale-75 border border-white/20 rounded-full"></div>
         </div>
       </div>
     </div>
@@ -81,9 +77,13 @@
 import { defineComponent, ref, onMounted, onUnmounted, nextTick, type ComponentPublicInstance } from 'vue'
 import type { PropType } from 'vue'
 import type { Skill } from '../types'
+import { Icon } from '@iconify/vue'
 
 export default defineComponent({
   name: 'SkillsSection',
+  components: {
+    Icon
+  },
   props: {
     id: {
       type: String,
@@ -167,34 +167,34 @@ export default defineComponent({
     }
   },
   methods: {
-    // Ein einfaches Icon-System für die Skills
+    // Map skills to Iconify icon names
     getSkillIcon(skillName: string): string {
       const iconMap: Record<string, string> = {
-        "JavaScript": "JS",
-        "TypeScript": "TS",
-        "Vue.js": "Vue",
-        "Node.js": "Node",
-        "HTML": "</>",
-        "SQL": "SQL",
-        "Git": "🐺",
-        "Docker": "🐳",
-        "AWS": "AWS",
-        "Firebase": "🔥",
-        "Tailwind CSS": "🍃",
-        "CSS": "CSS",
-        "Express.js": "Ex",
-        "Nest.js": "🦁",
-        "React": "⚛️",
-        "Next.js": "▲",
-        "Angular": "A",
-        "Nuxt.js": "N",
-        "Java": "☕",
-        "Springboot": "SB",
-        "MCP": "🤖",
-        "OpenTofu": "OT"
+        "JavaScript": "logos:javascript",
+        "TypeScript": "logos:typescript-icon",
+        "Vue.js": "logos:vue",
+        "Node.js": "logos:nodejs-icon",
+        "HTML": "vscode-icons:file-type-html",
+        "SQL": "vscode-icons:file-type-sql",
+        "Git": "logos:git-icon",
+        "Docker": "logos:docker-icon",
+        "AWS": "logos:aws",
+        "Firebase": "logos:firebase",
+        "Tailwind CSS": "logos:tailwindcss-icon",
+        "CSS": "vscode-icons:file-type-css",
+        "Express.js": "simple-icons:express",
+        "Nest.js": "logos:nestjs",
+        "React": "logos:react",
+        "Next.js": "logos:nextjs-icon",
+        "Angular": "logos:angular-icon",
+        "Nuxt.js": "logos:nuxt-icon",
+        "Java": "logos:java",
+        "Springboot": "logos:spring-icon",
+        "MCP": "carbon:bot",
+        "OpenTofu": "simple-icons:opentofu"
       };
 
-      return iconMap[skillName] || "•";
+      return iconMap[skillName] || "mdi:code-tags";
     }
   }
 })
@@ -203,10 +203,12 @@ export default defineComponent({
 <style scoped>
 /* Hover-Glow Effekt für den Technisches Profil Badge */
 .hover-glow {
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 .hover-glow:hover {
-  box-shadow: 0 0 10px 0 rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  border-color: rgba(59, 130, 246, 0.6);
+  background-color: rgba(59, 130, 246, 0.1);
 }
 
 /* Skill Card Base Styling - Einheitliche Animation für alle */
@@ -223,55 +225,59 @@ export default defineComponent({
 }
 
 .skill-card-content {
-  background-color: white;
-  border: 1px solid #e5e7eb;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1.25rem;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
 }
 
 .skill-card:hover .skill-card-content {
   transform: translate(-0.25rem, -0.25rem);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.15);
 }
 
 /* Skill Icon Styling */
 .skill-icon {
   position: relative;
   border-radius: 9999px;
-  background-color: #f9fafb;
+  background-color: rgba(255, 255, 255, 0.25);
   width: 3.5rem;
   height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 0.75rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   overflow: hidden;
   transition: background-color 0.3s ease;
 }
 
 .skill-card:hover .skill-icon {
-  background-color: rgba(16, 185, 129, 0.1);
+  background-color: rgba(59, 130, 246, 0.3);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 
-.skill-icon-text {
-  font-size: 1.25rem;
-  color: #10b981;
+.skill-icon-svg {
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  color: white;
   position: relative;
   z-index: 10;
   transition: transform 0.3s ease;
 }
 
-.skill-card:hover .skill-icon-text {
+.skill-card:hover .skill-icon-svg {
   transform: scale(1.1);
 }
 
 .skill-icon-bg {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to right, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1));
+  background-color: rgba(255, 255, 255, 0.1);
   opacity: 0;
   transform: scale(0);
   transition: all 0.5s ease;
@@ -284,7 +290,7 @@ export default defineComponent({
 
 /* Skill Name Styling */
 .skill-name {
-  color: #1f2937;
+  color: white;
   font-weight: 500;
   text-align: center;
   position: relative;
@@ -296,7 +302,6 @@ export default defineComponent({
   bottom: 0;
   width: 0;
   height: 0.125rem;
-  background-color: #10b981;
   transition: width 0.3s ease;
 }
 
@@ -317,30 +322,30 @@ export default defineComponent({
   transform: translate(0.5rem, 0.5rem);
 }
 
-/* Background colors for different skill types */
+/* Background colors for different skill types - all white/gray for dark theme */
 .skill-card-emerald .skill-card-bg {
-  background-color: rgba(16, 185, 129, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .skill-card-blue .skill-card-bg {
-  background-color: rgba(59, 130, 246, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .skill-card-indigo .skill-card-bg {
-  background-color: rgba(99, 102, 241, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .skill-card-purple .skill-card-bg {
-  background-color: rgba(139, 92, 246, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .skill-card-pink .skill-card-bg {
-  background-color: rgba(236, 72, 153, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Fallback for any other colors */
 [class*="skill-card-"] .skill-card-bg {
-  background-color: rgba(16, 185, 129, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Floating animations for decorative elements */
