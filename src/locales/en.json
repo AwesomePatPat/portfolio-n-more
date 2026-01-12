@@ -129,12 +129,21 @@
       },
       {
         "id": 8,
-        "title": "???",
-        "description": "Here is space for my project with you.",
-        "longDescription": "Here is space for my project with you.",
-        "provider": "???",
-        "startDate": "???",
-        "endDate": "???"
+        "title": "AI-Challange@Ost",
+        "description": "Nebenprojekt an der Fachhochschule Ostschweiz, bei dem ich mit meinem Dreierteam selbstfahrende Autos mit KI programmierte. Wir entwickelten ein Fahrmodell, das auf Schilder reagiert und Linien bei verschiedenen Lichtverhältnissen folgt, und holten den ersten Platz.",
+        "longDescription": "An der AI-Challenge@OST habe ich als externes Nebenprojekt an der Fachhochschule Ostschweiz teilgenommen und zusammen mit meinem Dreierteam ein selbstfahrendes Fahrzeug von Grund auf programmiert. Die Challenge erstreckte sich über drei Events am Campus Rapperswil-Jona zwischen Oktober und Dezember 2025.\n\nWir starteten am 25. Oktober mit einer Einführung in die AI-Programmierung. Zwischen den Events arbeiteten wir remote an verschiedenen Aufgaben, die bereits für die finale Challenge bewertet wurden. Unser Coach unterstützte uns dabei kontinuierlich.\n\nUnser Fahrmodell musste komplexe Herausforderungen meistern: Das Auto reagierte autonom auf Verkehrsschilder, folgte präzise einer Linie und bewältigte verschiedene Lichtverhältnisse sowie wechselnde Hintergründe. Wir investierten zwischen den Events ca. 5-8 Stunden pro Woche in die Entwicklung und Optimierung.\n\nAm 6. Dezember traten wir gegen alle anderen Teams an und holten den ersten Platz. Dafür gewannen wir Digitec Gutscheine im Wert von CHF 1000 pro Person. Das Event bot mir nicht nur technisches Know-How im Bereich AI und autonomes Fahren, sondern auch wertvolle Erfahrungen in Teamarbeit und Problemlösung unter Zeitdruck. Für mehr Detail: <a href=\"https://www.ost.ch/de/die-ost/campus/campus-rapperswil-jona/nachwuchs/ai-challenge\" target=\"_blank\" class=\"text-white hover:text-white/80 underline\">AI-Challange@Ost</a>",
+        "provider": "Claudia Furrer",
+        "startDate": "25.10.2025",
+        "endDate": "06.12.2025"
+      },
+      {
+        "id": 9,
+        "title": "[M]INI NET",
+        "description": "Lernendenteam @ [M]INI NET - KI und Automatisierungsteams",
+        "longDescription": "Ich bin bei [M]INI NET die erste Ansprechperson und erfasse Aufträge in unserem Auftragspool. Dabei repräsentiere ich [M]INI NET professionell gegenüber unseren Kunden. Das Team unterstützt mich dabei, meine Komfortzone zu verlassen und auch mal bereichsübergreifend zu arbeiten.\n\nZusätzlich zu unserem bestehenden Media- und Admin-Team kann ich von Anfang an beim Aufbau eines neuen KI- und Automatisierungsteams dabei sein! In diesem Team kann ich die Zukunft aktiv mitgestalten und Verantwortung übernehmen.\n\nKI und Automatisierung sind zwei der spannendsten Themen unserer Zeit. Auch wir bei [M]INI NET wollen diese Entwicklungen aktiv nutzen und vorantreiben. Dabei lerne ich, moderne Tools produktiv einzusetzen und mein Wissen direkt in die Organisation einzubringen.\n\nIn diesem Pilotprojekt bilde ich mit anderen ein starkes Team, das Innovation, Kreativität und technisches Verständnis vereint. Gemeinsam gestalten wir Neues, probieren aus und setzen eigene Ideen um – unterstützt von [M]INI NET und erfahrenen Fachcoaches.",
+        "provider": "Elia Licari",
+        "startDate": "02.02.2026",
+        "endDate": "31.07.2027"
       }
     ]
   }

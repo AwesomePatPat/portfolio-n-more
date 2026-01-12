@@ -106,7 +106,8 @@ export default defineComponent({
       5: ['Vue.js', 'Express.js', 'Type Script', 'PowerApps', 'Sharepoint', 'PowerAutomate'],
       6: ['Vue.js', 'Nest.js', 'Type Script', 'PowerApps', 'Sharepoint', 'PowerAutomate', 'Docker', 'Git', 'Prisma', 'iAPC'],
       7: ['Java', 'Springboot', 'AWS', 'MCP', 'AI'],
-      8: ['?', '?', '?']
+      8: ['python', 'pandas'],
+      9: ['?', '?', '?'],
     }
 
     const iconsMap: { [key: number]: string } = {
@@ -117,7 +118,8 @@ export default defineComponent({
       5: 'terminal',
       6: 'clipboard-list',
       7: 'server',
-      8: 'star'
+      8: 'ai-challenge',
+      9: 'mini-net',
     }
 
     const projects = computed<Project[]>(() => {
