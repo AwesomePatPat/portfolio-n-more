@@ -4,7 +4,8 @@
     "about": "À propos",
     "skills": "Compétences",
     "languages": "Langues",
-    "projects": "Projets"
+    "projects": "Projets",
+    "erfolge": "Succès"
   },
   "intro": {
     "badge": "Portfolio 2025",
@@ -62,7 +63,8 @@
       "description": "Description",
       "close": "Fermer",
       "provider": "Fournisseur de Projet",
-      "period": "Période"
+      "period": "Période",
+      "viewErfolg": "🏆 Aller au Succès"
     },
     "list": [
       {
@@ -125,7 +127,8 @@
         "longDescription": "Dans le projet, j'ai commencé avec une application de démarrage pour apprendre les technologies requises (Springboot, AWS, MCP et plus). Plus tard, nous avons travaillé sur des commandes productives pour simplifier les processus internes avec l'IA.",
         "provider": "Gregory Hubacher",
         "startDate": "04.08.2025",
-        "endDate": "30.01.2026"
+        "endDate": "30.01.2026",
+        "erfolgId": 1
       },
       {
         "id": 8,
@@ -144,6 +147,42 @@
         "provider": "Elia Licari",
         "startDate": "02.02.2026",
         "endDate": "31.07.2027"
+      }
+    ]
+  },
+  "erfolge": {
+    "badge": "Jalons",
+    "title": "Mes",
+    "titleHighlight": "Succès",
+    "button": "Voir les Détails",
+    "modal": {
+      "category": "Catégorie",
+      "date": "Date",
+      "gallery": "Galerie d'Images",
+      "description": "Description",
+      "achievements": "Réalisations",
+      "close": "Fermer"
+    },
+    "noImages": "Aucune image disponible",
+    "list": [
+      {
+        "id": 1,
+        "title": "AI-Challenge@OST - 1ère Place",
+        "description": "Gagnant du défi AI à l'Université des Sciences Appliquées de Suisse Orientale avec voiture autonome",
+        "longDescription": "J'ai participé à l'AI-Challenge@OST en tant que projet parallèle externe à l'Université des Sciences Appliquées de Suisse Orientale et, avec mon équipe de trois personnes, j'ai programmé un véhicule autonome à partir de zéro. Le défi s'est déroulé sur trois événements au campus de Rapperswil-Jona entre octobre et décembre 2025.<br><br>Nous avons commencé le 25 octobre avec une introduction à la programmation de l'IA. Entre les événements, nous avons travaillé à distance sur diverses tâches qui étaient déjà évaluées pour le défi final. Notre coach nous a soutenus en permanence.<br><br>Notre modèle de conduite devait maîtriser des défis complexes : La voiture réagissait de manière autonome aux panneaux de circulation, suivait une ligne avec précision et gérait différentes conditions d'éclairage et des arrière-plans changeants. Nous avons investi environ 5 à 8 heures par semaine entre les événements dans le développement et l'optimisation.<br><br>Le 6 décembre, nous avons concouru contre toutes les autres équipes et avons remporté la première place. Pour cela, nous avons gagné des bons Digitec d'une valeur de CHF 1000 par personne.",
+        "category": "Compétition",
+        "date": "06.12.2025",
+        "images": [
+          "/images/aichallange/aichallange_01.jpg",
+          "/images/aichallange/aichallange_09.jpg",
+          "/images/aichallange/aichallange_02.jpg",
+          "/images/aichallange/aichallange_03.jpg",
+          "/images/aichallange/aichallange_04.jpg",
+          "/images/aichallange/aichallange_05.jpg",
+          "/images/aichallange/aichallange_06.jpg",
+          "/images/aichallange/aichallange_07.jpg",
+          "/images/aichallange/aichallange_08.jpg"
+        ]
       }
     ]
   }

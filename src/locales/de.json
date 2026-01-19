@@ -4,7 +4,8 @@
     "about": "About",
     "skills": "Skills",
     "languages": "Sprachen",
-    "projects": "Projekte"
+    "projects": "Projekte",
+    "erfolge": "Erfolge"
   },
   "intro": {
     "badge": "Portfolio 2025",
@@ -62,7 +63,8 @@
       "description": "Beschreibung",
       "close": "Schließen",
       "provider": "Projektanbieter",
-      "period": "Zeitraum"
+      "period": "Zeitraum",
+      "viewErfolg": "🏆 Zum Erfolg springen"
     },
     "list": [
       {
@@ -134,7 +136,8 @@
         "longDescription": "An der AI-Challenge@OST habe ich als externes Nebenprojekt an der Fachhochschule Ostschweiz teilgenommen und zusammen mit meinem Dreierteam ein selbstfahrendes Fahrzeug von Grund auf programmiert. Die Challenge erstreckte sich über drei Events am Campus Rapperswil-Jona zwischen Oktober und Dezember 2025.\n\nWir starteten am 25. Oktober mit einer Einführung in die AI-Programmierung. Zwischen den Events arbeiteten wir remote an verschiedenen Aufgaben, die bereits für die finale Challenge bewertet wurden. Unser Coach unterstützte uns dabei kontinuierlich.\n\nUnser Fahrmodell musste komplexe Herausforderungen meistern: Das Auto reagierte autonom auf Verkehrsschilder, folgte präzise einer Linie und bewältigte verschiedene Lichtverhältnisse sowie wechselnde Hintergründe. Wir investierten zwischen den Events ca. 5-8 Stunden pro Woche in die Entwicklung und Optimierung.\n\nAm 6. Dezember traten wir gegen alle anderen Teams an und holten den ersten Platz. Dafür gewannen wir Digitec Gutscheine im Wert von CHF 1000 pro Person. Das Event bot mir nicht nur technisches Know-How im Bereich AI und autonomes Fahren, sondern auch wertvolle Erfahrungen in Teamarbeit und Problemlösung unter Zeitdruck. Für mehr Detail: <a href=\"https://www.ost.ch/de/die-ost/campus/campus-rapperswil-jona/nachwuchs/ai-challenge\" target=\"_blank\" class=\"text-white hover:text-white/80 underline\">AI-Challange@Ost</a>",
         "provider": "Claudia Furrer",
         "startDate": "25.10.2025",
-        "endDate": "06.12.2025"
+        "endDate": "06.12.2025",
+        "erfolgId": 1
       },
       {
         "id": 9,
@@ -144,6 +147,42 @@
         "provider": "Elia Licari",
         "startDate": "02.02.2026",
         "endDate": "31.07.2027"
+      }
+    ]
+  },
+  "erfolge": {
+    "badge": "Meilensteine",
+    "title": "Meine",
+    "titleHighlight": "Erfolge",
+    "button": "Details anzeigen",
+    "modal": {
+      "category": "Kategorie",
+      "date": "Datum",
+      "gallery": "Bildergalerie",
+      "description": "Beschreibung",
+      "achievements": "Erreichte Ziele",
+      "close": "Schließen"
+    },
+    "noImages": "Keine Bilder verfügbar",
+    "list": [
+      {
+        "id": 1,
+        "title": "AI-Challenge@OST - 1. Platz",
+        "description": "Gewinner der AI-Challenge an der Fachhochschule Ostschweiz mit selbstfahrendem Auto",
+        "longDescription": "An der AI-Challenge@OST habe ich als externes Nebenprojekt an der Fachhochschule Ostschweiz teilgenommen und zusammen mit meinem Dreierteam ein selbstfahrendes Fahrzeug von Grund auf programmiert. Die Challenge erstreckte sich über drei Events am Campus Rapperswil-Jona zwischen Oktober und Dezember 2025.<br><br>Wir starteten am 25. Oktober mit einer Einführung in die AI-Programmierung. Zwischen den Events arbeiteten wir remote an verschiedenen Aufgaben, die bereits für die finale Challenge bewertet wurden. Unser Coach unterstützte uns dabei kontinuierlich.<br><br>Unser Fahrmodell musste komplexe Herausforderungen meistern: Das Auto reagierte autonom auf Verkehrsschilder, folgte präzise einer Linie und bewältigte verschiedene Lichtverhältnisse sowie wechselnde Hintergründe. Wir investierten zwischen den Events ca. 5-8 Stunden pro Woche in die Entwicklung und Optimierung.<br><br>Am 6. Dezember traten wir gegen alle anderen Teams an und holten den ersten Platz. Dafür gewannen wir Digitec Gutscheine im Wert von CHF 1000 pro Person.",
+        "category": "Wettbewerb",
+        "date": "06.12.2025",
+        "images": [
+          "/images/aichallange/aichallange_01.jpg",
+          "/images/aichallange/aichallange_09.jpg",
+          "/images/aichallange/aichallange_02.jpg",
+          "/images/aichallange/aichallange_03.jpg",
+          "/images/aichallange/aichallange_04.jpg",
+          "/images/aichallange/aichallange_05.jpg",
+          "/images/aichallange/aichallange_06.jpg",
+          "/images/aichallange/aichallange_07.jpg",
+          "/images/aichallange/aichallange_08.jpg"
+        ]
       }
     ]
   }

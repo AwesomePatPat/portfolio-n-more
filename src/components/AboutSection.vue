@@ -24,7 +24,7 @@
         <div class="w-24 h-1 bg-blue-500 rounded-full mt-4"></div>
       </div>
 
-      <!-- About Content mit hellem Design und verbesserten Hover-Effekten -->
+      <!-- About Content -->
       <div class="max-w-4xl mx-auto bg-black/50 border border-white/20 rounded-2xl overflow-hidden shadow-md transition-all duration-500 hover-lift">
         <div class="p-8 md:p-10">
           <!-- Bio-Text -->

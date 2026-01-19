@@ -4,7 +4,8 @@
     "about": "About",
     "skills": "Skills",
     "languages": "Languages",
-    "projects": "Projects"
+    "projects": "Projects",
+    "erfolge": "Achievements"
   },
   "intro": {
     "badge": "Portfolio 2025",
@@ -62,7 +63,8 @@
       "description": "Description",
       "close": "Close",
       "provider": "Project Provider",
-      "period": "Period"
+      "period": "Period",
+      "viewErfolg": "🏆 Jump to Achievement"
     },
     "list": [
       {
@@ -125,7 +127,8 @@
         "longDescription": "In the project, I started with a starter app to learn the required technologies (Springboot, AWS, MCP and more). Later we worked on productive orders to simplify internal processes with AI.",
         "provider": "Gregory Hubacher",
         "startDate": "04.08.2025",
-        "endDate": "30.01.2026"
+        "endDate": "30.01.2026",
+        "erfolgId": 1
       },
       {
         "id": 8,
@@ -144,6 +147,42 @@
         "provider": "Elia Licari",
         "startDate": "02.02.2026",
         "endDate": "31.07.2027"
+      }
+    ]
+  },
+  "erfolge": {
+    "badge": "Milestones",
+    "title": "My",
+    "titleHighlight": "Achievements",
+    "button": "View Details",
+    "modal": {
+      "category": "Category",
+      "date": "Date",
+      "gallery": "Image Gallery",
+      "description": "Description",
+      "achievements": "Accomplishments",
+      "close": "Close"
+    },
+    "noImages": "No images available",
+    "list": [
+      {
+        "id": 1,
+        "title": "AI-Challenge@OST - 1st Place",
+        "description": "Winner of the AI Challenge at the University of Applied Sciences Eastern Switzerland with self-driving car",
+        "longDescription": "I participated in the AI-Challenge@OST as an external side project at the University of Applied Sciences Eastern Switzerland and together with my team of three programmed a self-driving vehicle from scratch. The challenge spanned three events at the Rapperswil-Jona campus between October and December 2025.<br><br>We started on October 25 with an introduction to AI programming. Between events, we worked remotely on various tasks that were already evaluated for the final challenge. Our coach supported us continuously.<br><br>Our driving model had to master complex challenges: The car reacted autonomously to traffic signs, followed a line precisely, and handled different lighting conditions and changing backgrounds. We invested about 5-8 hours per week between events in development and optimization.<br><br>On December 6, we competed against all other teams and won first place. For this, we won Digitec vouchers worth CHF 1000 per person.",
+        "category": "Competition",
+        "date": "06.12.2025",
+        "images": [
+          "/images/aichallange/aichallange_01.jpg",
+          "/images/aichallange/aichallange_09.jpg",
+          "/images/aichallange/aichallange_02.jpg",
+          "/images/aichallange/aichallange_03.jpg",
+          "/images/aichallange/aichallange_04.jpg",
+          "/images/aichallange/aichallange_05.jpg",
+          "/images/aichallange/aichallange_06.jpg",
+          "/images/aichallange/aichallange_07.jpg",
+          "/images/aichallange/aichallange_08.jpg"
+        ]
       }
     ]
   }

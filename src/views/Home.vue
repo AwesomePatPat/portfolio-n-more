@@ -14,6 +14,7 @@
       <SkillsSection id="skills" :skills="skills" />
       <LanguagesSection id="languages" :languages="languages" />
       <ProjectsSection id="projects" :projects="projects" />
+      <ErfolgeSection id="erfolge" :erfolge="erfolge" />
     </div>
 
     <SplashCursor
@@ -40,8 +41,9 @@ import AboutSection from '../components/AboutSection.vue'
 import SkillsSection from '../components/SkillsSection.vue'
 import LanguagesSection from '../components/LanguagesSection.vue'
 import ProjectsSection from '../components/ProjectsSection.vue'
+import ErfolgeSection from '../components/ErfolgeSection.vue'
 import SplashCursor from '../components/vueBits/Animations/SplashCursor/SplashCursor.vue'
-import type { Skill, Language, Project, NavItem } from '../types'
+import type { Skill, Language, Project, Erfolg, NavItem } from '../types'
 
 export default defineComponent({
   name: 'HomeView',
@@ -52,6 +54,7 @@ export default defineComponent({
     SkillsSection,
     LanguagesSection,
     ProjectsSection,
+    ErfolgeSection,
     SplashCursor,
   },
   setup() {
@@ -62,7 +65,8 @@ export default defineComponent({
       { id: 'about', name: t('nav.about') },
       { id: 'skills', name: t('nav.skills') },
       { id: 'languages', name: t('nav.languages') },
-      { id: 'projects', name: t('nav.projects') }
+      { id: 'projects', name: t('nav.projects') },
+      { id: 'erfolge', name: t('nav.erfolge') },
     ])
 
     const skills = ref<Skill[]>([
@@ -87,14 +91,14 @@ export default defineComponent({
       { name: 'SQL', color: 'green' },
       { name: 'Tailwind CSS', color: 'cyan' },
       { name: 'TypeScript', color: 'blue' },
-      { name: 'Vue.js', color: 'emerald' }
+      { name: 'Vue.js', color: 'emerald' },
     ])
 
     const languages = computed<Language[]>(() => {
       const langList = tm('languages.list') as Array<{ name: string; level: string }>
-      return langList.map(lang => ({
+      return langList.map((lang) => ({
         name: lang.name,
-        level: lang.level
+        level: lang.level,
       }))
     })
 
@@ -104,7 +108,18 @@ export default defineComponent({
       3: ['Kommunikation', 'Networking'],
       4: ['Vue.js', 'Nuxt.js', 'Type Script', 'sAFE', 'Prisma', 'Jira'],
       5: ['Vue.js', 'Express.js', 'Type Script', 'PowerApps', 'Sharepoint', 'PowerAutomate'],
-      6: ['Vue.js', 'Nest.js', 'Type Script', 'PowerApps', 'Sharepoint', 'PowerAutomate', 'Docker', 'Git', 'Prisma', 'iAPC'],
+      6: [
+        'Vue.js',
+        'Nest.js',
+        'Type Script',
+        'PowerApps',
+        'Sharepoint',
+        'PowerAutomate',
+        'Docker',
+        'Git',
+        'Prisma',
+        'iAPC',
+      ],
       7: ['Java', 'Springboot', 'AWS', 'MCP', 'AI'],
       8: ['python', 'pandas'],
       9: ['?', '?', '?'],
@@ -124,13 +139,14 @@ export default defineComponent({
 
     const projects = computed<Project[]>(() => {
       const projectsList = tm('projects.list') as Array<{
-        id: number;
-        title: string;
-        description: string;
-        longDescription: string;
-        provider?: string;
-        startDate: string;
-        endDate: string;
+        id: number
+        title: string
+        description: string
+        longDescription: string
+        provider?: string
+        startDate: string
+        endDate: string
+        erfolgId?: number
       }>
       return projectsList.map((proj) => ({
         id: proj.id,
@@ -141,17 +157,54 @@ export default defineComponent({
         technologies: technologiesMap[proj.id] || [],
         startDate: proj.startDate,
         endDate: proj.endDate,
-        icon: iconsMap[proj.id] || 'star'
+        icon: iconsMap[proj.id] || 'star',
+        erfolgId: proj.erfolgId,
       }))
     })
+
+    const erfolge = computed<Erfolg[]>(() => {
+      const erfolgeList = tm('erfolge.list') as Array<{
+        id: number
+        title: string
+        description: string
+        longDescription?: string
+        category?: string
+        date?: string
+        images?: string[]
+        achievements?: string[]
+      }>
+      return erfolgeList.map((erfolg) => ({
+        id: erfolg.id,
+        title: erfolg.title,
+        description: erfolg.description,
+        longDescription: erfolg.longDescription,
+        category: erfolg.category,
+        date: erfolg.date,
+        images: erfolg.images || [],
+        achievements: erfolg.achievements || [],
+        icon: getErfolgIcon(erfolg.id),
+      }))
+    })
+
+    function getErfolgIcon(id: number): string {
+      const icons: { [key: number]: string } = {
+        1: 'trophy',
+        2: 'code',
+        3: 'academic-cap',
+        4: 'badge-check',
+        5: 'sparkles',
+      }
+      return icons[id] || 'star'
+    }
 
     return {
       navItems,
       skills,
       languages,
-      projects
+      projects,
+      erfolge,
     }
-  }
+  },
 })
 </script>
 
