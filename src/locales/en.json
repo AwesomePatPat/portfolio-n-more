@@ -167,7 +167,7 @@
     "list": [
       {
         "id": 1,
-        "title": "AI-Challenge@OST - 11111111111111st Place",
+        "title": "AI-Challenge@OST - 1st Place",
         "description": "Winner of the AI Challenge at the University of Applied Sciences Eastern Switzerland with self-driving car",
         "longDescription": "I participated in the AI-Challenge@OST as an external side project at the University of Applied Sciences Eastern Switzerland and together with my team of three programmed a self-driving vehicle from scratch. The challenge spanned three events at the Rapperswil-Jona campus between October and December 2025.<br><br>We started on October 25 with an introduction to AI programming. Between events, we worked remotely on various tasks that were already evaluated for the final challenge. Our coach supported us continuously.<br><br>Our driving model had to master complex challenges: The car reacted autonomously to traffic signs, followed a line precisely, and handled different lighting conditions and changing backgrounds. We invested about 5-8 hours per week between events in development and optimization.<br><br>On December 6, we competed against all other teams and won first place. For this, we won Digitec vouchers worth CHF 1000 per person.",
         "category": "Competition",
