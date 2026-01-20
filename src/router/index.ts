@@ -10,7 +10,12 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/valorant',
     name: 'Valorant',
-    component: () => import('../valorant/Valorant.vue')
+    component: () => import('../components/valorant/Valorant.vue')
+  },
+  {
+    path: '/linktree',
+    name: 'Linktree',
+    component: () => import('../components/linktree/Linktree.vue')
   }
 ]
 
