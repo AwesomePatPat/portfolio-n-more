@@ -32,7 +32,9 @@
                 >
                   Deselect All
                 </button>
-                <span class="text-gray-300">{{ selectedAgents.length }} / {{ agents.length }} selected</span>
+                <span class="text-gray-300"
+                  >{{ selectedAgents.length }} / {{ agents.length }} selected</span
+                >
               </div>
 
               <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
@@ -44,7 +46,7 @@
                     'agent-card cursor-pointer p-4 rounded-lg border-2 transition-all',
                     selectedAgents.includes(agent)
                       ? 'border-red-500 bg-red-500/20'
-                      : 'border-gray-700 bg-gray-800/50 hover:border-gray-600'
+                      : 'border-gray-700 bg-gray-800/50 hover:border-gray-600',
                   ]"
                 >
                   <div class="text-center">
@@ -69,7 +71,7 @@
                         'px-6 py-3 rounded-lg transition-all font-semibold',
                         weaponType === 'both'
                           ? 'bg-red-600 text-white'
-                          : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                          : 'bg-gray-700 text-gray-300 hover:bg-gray-600',
                       ]"
                     >
                       Both (Round 1-2: Sidearms only, then all weapons)
@@ -80,7 +82,7 @@
                         'px-6 py-3 rounded-lg transition-all font-semibold',
                         weaponType === 'sidearms'
                           ? 'bg-red-600 text-white'
-                          : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                          : 'bg-gray-700 text-gray-300 hover:bg-gray-600',
                       ]"
                     >
                       Only Sidearms
@@ -91,7 +93,7 @@
                         'px-6 py-3 rounded-lg transition-all font-semibold',
                         weaponType === 'primaries'
                           ? 'bg-red-600 text-white'
-                          : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                          : 'bg-gray-700 text-gray-300 hover:bg-gray-600',
                       ]"
                     >
                       Only Primaries
@@ -114,7 +116,7 @@
                       'px-6 py-3 rounded-lg transition-all font-semibold',
                       crosshairEnabled
                         ? 'bg-green-600 text-white'
-                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600',
                     ]"
                   >
                     {{ crosshairEnabled ? 'Enabled' : 'Disabled' }}
@@ -145,7 +147,9 @@
                         rows="2"
                         @click="copyToClipboard"
                       ></textarea>
-                      <p class="text-xs text-gray-500 mt-1">Click to copy Valorant crosshair code</p>
+                      <p class="text-xs text-gray-500 mt-1">
+                        Click to copy Valorant crosshair code
+                      </p>
                     </div>
                   </div>
                   <button
@@ -167,7 +171,7 @@
                   'px-12 py-6 rounded-lg text-2xl font-bold transition-all transform hover:scale-105',
                   selectedAgents.length === 0
                     ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                    : 'bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-500/50'
+                    : 'bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-500/50',
                 ]"
               >
                 START ROULETTE
@@ -225,8 +229,13 @@
               </div>
 
               <!-- Crosshair Display -->
-              <div v-if="crosshairEnabled && shouldShowCrosshair" class="mt-8 p-6 bg-gray-900/50 rounded-lg">
-                <h3 class="text-xl font-semibold text-white mb-4 text-center">Your New Crosshair!</h3>
+              <div
+                v-if="crosshairEnabled && shouldShowCrosshair"
+                class="mt-8 p-6 bg-gray-900/50 rounded-lg"
+              >
+                <h3 class="text-xl font-semibold text-white mb-4 text-center">
+                  Your New Crosshair!
+                </h3>
                 <div class="flex flex-col items-center gap-4">
                   <CrosshairPreview :crosshair="currentCrosshair" />
                   <div class="w-full max-w-xl">
@@ -237,7 +246,9 @@
                       rows="2"
                       @click="copyToClipboard"
                     ></textarea>
-                    <p class="text-xs text-gray-500 mt-1">Click to copy - Paste in Valorant settings!</p>
+                    <p class="text-xs text-gray-500 mt-1">
+                      Click to copy - Paste in Valorant settings!
+                    </p>
                   </div>
                 </div>
               </div>
@@ -265,21 +276,51 @@ import { ref, onMounted, computed } from 'vue'
 
 // Agent List (27 agents - added Veto!)
 const agents = [
-  'Brimstone', 'Phoenix', 'Sage', 'Sova', 'Viper',
-  'Cypher', 'Reyna', 'Killjoy', 'Breach', 'Omen',
-  'Jett', 'Raze', 'Skye', 'Yoru', 'Astra',
-  'KAY/O', 'Chamber', 'Neon', 'Fade', 'Harbor',
-  'Gekko', 'Deadlock', 'Iso', 'Clove', 'Vyse', 'Tejo', 'Veto'
+  'Brimstone',
+  'Phoenix',
+  'Sage',
+  'Sova',
+  'Viper',
+  'Cypher',
+  'Reyna',
+  'Killjoy',
+  'Breach',
+  'Omen',
+  'Jett',
+  'Raze',
+  'Skye',
+  'Yoru',
+  'Astra',
+  'KAY/O',
+  'Chamber',
+  'Neon',
+  'Fade',
+  'Harbor',
+  'Gekko',
+  'Deadlock',
+  'Iso',
+  'Clove',
+  'Vyse',
+  'Tejo',
+  'Veto',
 ]
 
 // Weapons
-const sidearms = ['Classic', 'Shorty', 'Frenzy', 'Ghost', 'Sheriff']
+const sidearms = ['Classic', 'Shorty', 'Frenzy', 'Ghost', 'Sheriff', 'Bandit']
 const primaries = [
-  'Stinger', 'Spectre', // SMGs
-  'Bucky', 'Judge', // Shotguns
-  'Bulldog', 'Guardian', 'Phantom', 'Vandal', // Rifles
-  'Marshal', 'Outlaw', 'Operator', // Snipers
-  'Ares', 'Odin' // Heavy
+  'Stinger',
+  'Spectre', // SMGs
+  'Bucky',
+  'Judge', // Shotguns
+  'Bulldog',
+  'Guardian',
+  'Phantom',
+  'Vandal', // Rifles
+  'Marshal',
+  'Outlaw',
+  'Operator', // Snipers
+  'Ares',
+  'Odin', // Heavy
 ]
 const melee = 'Knife'
 
@@ -296,7 +337,27 @@ const currentRound = ref(1)
 const currentWeapon = ref('')
 const currentCrosshair = ref<any>(null)
 const currentCrosshairCode = ref('')
-const previewCrosshair = ref<any>(null)
+const previewCrosshair = ref<any>({
+  color: '#FFFFFF',
+  outlineOpacity: 1,
+  centerDot: true,
+  centerDotOpacity: 1,
+  centerDotSize: 4,
+  innerLines: {
+    show: true,
+    opacity: 1,
+    length: 20,
+    thickness: 3,
+    offset: 6,
+  },
+  outerLines: {
+    show: true,
+    opacity: 1,
+    length: 20,
+    thickness: 3,
+    offset: 16,
+  },
+})
 const previewCrosshairCode = ref('')
 const isSpinning = ref(false)
 const rouletteWeapons = ref<string[]>([])
@@ -310,7 +371,7 @@ const shouldShowCrosshair = computed(() => {
 const rouletteStyle = computed(() => {
   return {
     transform: `translateX(-${rouletteOffset.value}px)`,
-    transition: isSpinning.value ? 'transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99)' : 'none'
+    transition: isSpinning.value ? 'transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99)' : 'none',
   }
 })
 
@@ -340,7 +401,7 @@ const saveSettings = () => {
       selectedAgents: selectedAgents.value,
       weaponType: weaponType.value,
       crosshairEnabled: crosshairEnabled.value,
-      crosshairChangeInterval: crosshairChangeInterval.value
+      crosshairChangeInterval: crosshairChangeInterval.value,
     }
     localStorage.setItem(STORAGE_KEY, JSON.stringify(settings))
   } catch (e) {
@@ -451,15 +512,15 @@ const parseCrosshairCode = (code: string): any => {
       opacity: params['0a'] || 1,
       length: (params['0l'] || 10) * 2,
       thickness: (params['0t'] || 2) * 1.5,
-      offset: (params['0o'] || 3) * 2
+      offset: (params['0o'] || 3) * 2,
     },
     outerLines: {
       show: (params['1l'] || 0) > 0,
       opacity: params['1a'] || 1,
       length: (params['1l'] || 10) * 2,
       thickness: (params['1t'] || 2) * 1.5,
-      offset: (params['1o'] || 8) * 2
-    }
+      offset: (params['1o'] || 8) * 2,
+    },
   }
 }
 
@@ -582,7 +643,7 @@ const spinRoulette = (): Promise<string> => {
     setTimeout(() => {
       const itemWidth = 150
       const containerWidth = window.innerWidth
-      const targetOffset = finalPosition * itemWidth - (containerWidth / 2) + (itemWidth / 2)
+      const targetOffset = finalPosition * itemWidth - containerWidth / 2 + itemWidth / 2
       rouletteOffset.value = targetOffset
     }, 50)
 
@@ -644,7 +705,7 @@ onMounted(() => {
 </script>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, h } from 'vue'
 
 // Crosshair Preview Component
 const CrosshairPreview = defineComponent({
@@ -652,131 +713,265 @@ const CrosshairPreview = defineComponent({
   props: {
     crosshair: {
       type: Object,
-      required: true
+      required: true,
+    },
+  },
+  setup(props) {
+    return () => {
+      const ch = props.crosshair
+      if (!ch) return null
+
+      const containerStyle = {
+        width: '300px',
+        height: '300px',
+        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+        position: 'relative',
+        borderRadius: '12px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: 'inset 0 0 20px rgba(0,0,0,0.5)',
+      }
+
+      const crosshairContainerStyle = {
+        position: 'relative',
+        width: '200px',
+        height: '200px',
+      }
+
+      const elements = []
+
+      // Center Dot
+      if (ch.centerDot) {
+        elements.push(
+          h('div', {
+            style: {
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: ch.centerDotSize + 'px',
+              height: ch.centerDotSize + 'px',
+              borderRadius: '50%',
+              backgroundColor: ch.color,
+              opacity: ch.centerDotOpacity,
+              boxShadow:
+                ch.outlineOpacity > 0 ? `0 0 0 1px rgba(0, 0, 0, ${ch.outlineOpacity})` : 'none',
+              zIndex: 10,
+            },
+          }),
+        )
+      }
+
+      // Inner Lines
+      if (ch.innerLines && ch.innerLines.show) {
+        const innerOutline =
+          ch.outlineOpacity > 0
+            ? `-1px 0 0 rgba(0, 0, 0, ${ch.outlineOpacity}),
+               1px 0 0 rgba(0, 0, 0, ${ch.outlineOpacity}),
+               0 -1px 0 rgba(0, 0, 0, ${ch.outlineOpacity}),
+               0 1px 0 rgba(0, 0, 0, ${ch.outlineOpacity})`
+            : 'none'
+
+        // Top
+        elements.push(
+          h('div', {
+            style: {
+              position: 'absolute',
+              top: `calc(50% - ${ch.innerLines.offset}px - ${ch.innerLines.length}px)`,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: `${ch.innerLines.thickness}px`,
+              height: `${ch.innerLines.length}px`,
+              backgroundColor: ch.color,
+              opacity: ch.innerLines.opacity,
+              boxShadow: innerOutline,
+              zIndex: 5,
+            },
+          }),
+        )
+
+        // Bottom
+        elements.push(
+          h('div', {
+            style: {
+              position: 'absolute',
+              top: `calc(50% + ${ch.innerLines.offset}px)`,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: `${ch.innerLines.thickness}px`,
+              height: `${ch.innerLines.length}px`,
+              backgroundColor: ch.color,
+              opacity: ch.innerLines.opacity,
+              boxShadow: innerOutline,
+              zIndex: 5,
+            },
+          }),
+        )
+
+        // Left
+        elements.push(
+          h('div', {
+            style: {
+              position: 'absolute',
+              top: '50%',
+              left: `calc(50% - ${ch.innerLines.offset}px - ${ch.innerLines.length}px)`,
+              transform: 'translateY(-50%)',
+              width: `${ch.innerLines.length}px`,
+              height: `${ch.innerLines.thickness}px`,
+              backgroundColor: ch.color,
+              opacity: ch.innerLines.opacity,
+              boxShadow: innerOutline,
+              zIndex: 5,
+            },
+          }),
+        )
+
+        // Right
+        elements.push(
+          h('div', {
+            style: {
+              position: 'absolute',
+              top: '50%',
+              left: `calc(50% + ${ch.innerLines.offset}px)`,
+              transform: 'translateY(-50%)',
+              width: `${ch.innerLines.length}px`,
+              height: `${ch.innerLines.thickness}px`,
+              backgroundColor: ch.color,
+              opacity: ch.innerLines.opacity,
+              boxShadow: innerOutline,
+              zIndex: 5,
+            },
+          }),
+        )
+      }
+
+      // Outer Lines
+      if (ch.outerLines && ch.outerLines.show) {
+        const outerOutline =
+          ch.outlineOpacity > 0
+            ? `-1px 0 0 rgba(0, 0, 0, ${ch.outlineOpacity}),
+               1px 0 0 rgba(0, 0, 0, ${ch.outlineOpacity}),
+               0 -1px 0 rgba(0, 0, 0, ${ch.outlineOpacity}),
+               0 1px 0 rgba(0, 0, 0, ${ch.outlineOpacity})`
+            : 'none'
+
+        // Top
+        elements.push(
+          h('div', {
+            style: {
+              position: 'absolute',
+              top: `calc(50% - ${ch.outerLines.offset}px - ${ch.outerLines.length}px)`,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: `${ch.outerLines.thickness}px`,
+              height: `${ch.outerLines.length}px`,
+              backgroundColor: ch.color,
+              opacity: ch.outerLines.opacity,
+              boxShadow: outerOutline,
+              zIndex: 4,
+            },
+          }),
+        )
+
+        // Bottom
+        elements.push(
+          h('div', {
+            style: {
+              position: 'absolute',
+              top: `calc(50% + ${ch.outerLines.offset}px)`,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: `${ch.outerLines.thickness}px`,
+              height: `${ch.outerLines.length}px`,
+              backgroundColor: ch.color,
+              opacity: ch.outerLines.opacity,
+              boxShadow: outerOutline,
+              zIndex: 4,
+            },
+          }),
+        )
+
+        // Left
+        elements.push(
+          h('div', {
+            style: {
+              position: 'absolute',
+              top: '50%',
+              left: `calc(50% - ${ch.outerLines.offset}px - ${ch.outerLines.length}px)`,
+              transform: 'translateY(-50%)',
+              width: `${ch.outerLines.length}px`,
+              height: `${ch.outerLines.thickness}px`,
+              backgroundColor: ch.color,
+              opacity: ch.outerLines.opacity,
+              boxShadow: outerOutline,
+              zIndex: 4,
+            },
+          }),
+        )
+
+        // Right
+        elements.push(
+          h('div', {
+            style: {
+              position: 'absolute',
+              top: '50%',
+              left: `calc(50% + ${ch.outerLines.offset}px)`,
+              transform: 'translateY(-50%)',
+              width: `${ch.outerLines.length}px`,
+              height: `${ch.outerLines.thickness}px`,
+              backgroundColor: ch.color,
+              opacity: ch.outerLines.opacity,
+              boxShadow: outerOutline,
+              zIndex: 4,
+            },
+          }),
+        )
+      }
+
+      // Center reference dot
+      elements.push(
+        h('div', {
+          style: {
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '2px',
+            height: '2px',
+            background: 'rgba(255, 255, 255, 0.3)',
+            borderRadius: '50%',
+            zIndex: 1,
+          },
+        }),
+      )
+
+      return h('div', { class: 'crosshair-preview', style: containerStyle }, [
+        h('div', { style: crosshairContainerStyle }, elements),
+        h(
+          'div',
+          {
+            style: {
+              position: 'absolute',
+              bottom: '8px',
+              right: '8px',
+              fontSize: '10px',
+              color: 'rgba(255, 255, 255, 0.5)',
+              fontFamily: 'monospace',
+            },
+          },
+          'Preview',
+        ),
+      ])
     }
   },
-  template: `
-    <div class="crosshair-preview" style="width: 200px; height: 200px; background: #1a1a1a; position: relative; border-radius: 8px;">
-      <!-- Center Dot -->
-      <div
-        v-if="crosshair.centerDot"
-        :style="{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: crosshair.centerDotSize + 'px',
-          height: crosshair.centerDotSize + 'px',
-          borderRadius: '50%',
-          backgroundColor: crosshair.color,
-          opacity: crosshair.centerDotOpacity
-        }"
-      ></div>
-
-      <!-- Inner Lines -->
-      <template v-if="crosshair.innerLines.show">
-        <!-- Top -->
-        <div :style="{
-          position: 'absolute',
-          top: \`calc(50% - \${crosshair.innerLines.offset}px - \${crosshair.innerLines.length}px)\`,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: \`\${crosshair.innerLines.thickness}px\`,
-          height: \`\${crosshair.innerLines.length}px\`,
-          backgroundColor: crosshair.color,
-          opacity: crosshair.innerLines.opacity
-        }"></div>
-        <!-- Bottom -->
-        <div :style="{
-          position: 'absolute',
-          top: \`calc(50% + \${crosshair.innerLines.offset}px)\`,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: \`\${crosshair.innerLines.thickness}px\`,
-          height: \`\${crosshair.innerLines.length}px\`,
-          backgroundColor: crosshair.color,
-          opacity: crosshair.innerLines.opacity
-        }"></div>
-        <!-- Left -->
-        <div :style="{
-          position: 'absolute',
-          top: '50%',
-          left: \`calc(50% - \${crosshair.innerLines.offset}px - \${crosshair.innerLines.length}px)\`,
-          transform: 'translateY(-50%)',
-          width: \`\${crosshair.innerLines.length}px\`,
-          height: \`\${crosshair.innerLines.thickness}px\`,
-          backgroundColor: crosshair.color,
-          opacity: crosshair.innerLines.opacity
-        }"></div>
-        <!-- Right -->
-        <div :style="{
-          position: 'absolute',
-          top: '50%',
-          left: \`calc(50% + \${crosshair.innerLines.offset}px)\`,
-          transform: 'translateY(-50%)',
-          width: \`\${crosshair.innerLines.length}px\`,
-          height: \`\${crosshair.innerLines.thickness}px\`,
-          backgroundColor: crosshair.color,
-          opacity: crosshair.innerLines.opacity
-        }"></div>
-      </template>
-
-      <!-- Outer Lines -->
-      <template v-if="crosshair.outerLines.show">
-        <!-- Top -->
-        <div :style="{
-          position: 'absolute',
-          top: \`calc(50% - \${crosshair.outerLines.offset}px - \${crosshair.outerLines.length}px)\`,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: \`\${crosshair.outerLines.thickness}px\`,
-          height: \`\${crosshair.outerLines.length}px\`,
-          backgroundColor: crosshair.color,
-          opacity: crosshair.outerLines.opacity
-        }"></div>
-        <!-- Bottom -->
-        <div :style="{
-          position: 'absolute',
-          top: \`calc(50% + \${crosshair.outerLines.offset}px)\`,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: \`\${crosshair.outerLines.thickness}px\`,
-          height: \`\${crosshair.outerLines.length}px\`,
-          backgroundColor: crosshair.color,
-          opacity: crosshair.outerLines.opacity
-        }"></div>
-        <!-- Left -->
-        <div :style="{
-          position: 'absolute',
-          top: '50%',
-          left: \`calc(50% - \${crosshair.outerLines.offset}px - \${crosshair.outerLines.length}px)\`,
-          transform: 'translateY(-50%)',
-          width: \`\${crosshair.outerLines.length}px\`,
-          height: \`\${crosshair.outerLines.thickness}px\`,
-          backgroundColor: crosshair.color,
-          opacity: crosshair.outerLines.opacity
-        }"></div>
-        <!-- Right -->
-        <div :style="{
-          position: 'absolute',
-          top: '50%',
-          left: \`calc(50% + \${crosshair.outerLines.offset}px)\`,
-          transform: 'translateY(-50%)',
-          width: \`\${crosshair.outerLines.length}px\`,
-          height: \`\${crosshair.outerLines.thickness}px\`,
-          backgroundColor: crosshair.color,
-          opacity: crosshair.outerLines.opacity
-        }"></div>
-      </template>
-    </div>
-  `
 })
 
 export default defineComponent({
   name: 'ValorantPage',
   components: {
-    CrosshairPreview
-  }
+    CrosshairPreview,
+  },
 })
 </script>
 
