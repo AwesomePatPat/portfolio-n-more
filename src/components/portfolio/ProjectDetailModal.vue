@@ -143,7 +143,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import type { PropType } from 'vue'
-import type { Project } from '../types'
+import type { Project } from '../../types'
 
 export default defineComponent({
   name: 'ProjectDetailModal',

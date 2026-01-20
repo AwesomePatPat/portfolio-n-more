@@ -299,7 +299,7 @@
 <script lang="ts">
 import { defineComponent, ref, reactive } from 'vue'
 import type { PropType } from 'vue'
-import type { Erfolg, ExternalLink } from '../types'
+import type { Erfolg, ExternalLink } from '../../types'
 import { Icon } from '@iconify/vue'
 
 export default defineComponent({

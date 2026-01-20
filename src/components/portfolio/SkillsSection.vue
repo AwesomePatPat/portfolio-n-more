@@ -76,7 +76,7 @@
 <script lang="ts">
 import { defineComponent, ref, onMounted, onUnmounted, nextTick, type ComponentPublicInstance } from 'vue'
 import type { PropType } from 'vue'
-import type { Skill } from '../types'
+import type { Skill } from '../../types'
 import { Icon } from '@iconify/vue'
 
 export default defineComponent({

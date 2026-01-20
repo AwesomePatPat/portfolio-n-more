@@ -103,7 +103,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import type { PropType } from 'vue'
-import type { Project } from '../types'
+import type { Project } from '../../types'
 import ProjectDetailModal from './ProjectDetailModal.vue'
 
 export default defineComponent({

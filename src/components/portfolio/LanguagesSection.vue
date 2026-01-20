@@ -114,7 +114,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import type { PropType } from 'vue'
-import type { Language } from '../types'
+import type { Language } from '../../types'
 
 export default defineComponent({
   name: 'LanguagesSection',
