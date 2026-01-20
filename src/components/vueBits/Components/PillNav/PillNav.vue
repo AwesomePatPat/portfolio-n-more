@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { gsap } from 'gsap'
-import { computed, onBeforeUnmount, onMounted, ref, useTemplateRef, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, useTemplateRef, watch, nextTick } from 'vue'
 
 type PillNavItem = {
   label: string
@@ -13,7 +13,7 @@ type PillNavItem = {
 }
 
 interface PillNavProps {
-  logo: string
+  logo?: string
   logoAlt?: string
   items: PillNavItem[]
   activeHref?: string
@@ -144,11 +144,26 @@ onBeforeUnmount(() => {
 })
 
 watch(
-  () => [props.items, props.ease, props.initialLoadAnimation],
+  () => props.items,
+  (newItems) => {
+    // Reset refs arrays when items change
+    circleRefs.value = new Array(newItems.length).fill(null)
+    tlRefs.value = new Array(newItems.length).fill(null)
+    activeTweenRefs.value = new Array(newItems.length).fill(null)
+
+    // Wait for DOM update, then re-layout
+    nextTick(() => {
+      layout()
+    })
+  },
+  { deep: true },
+)
+
+watch(
+  () => [props.ease, props.initialLoadAnimation],
   () => {
     layout()
   },
-  { deep: true },
 )
 
 const handleEnter = (i: number) => {
@@ -373,7 +388,11 @@ const setCircleRef = (el: HTMLSpanElement | null, index: number) => {
             :to="isRouterLink(item.href) ? item.href : undefined"
             :href="!isRouterLink(item.href) ? item.href : undefined"
             class="block px-4 py-3 rounded-[50px] font-bold text-[16px] transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-            :style="{ background: 'var(--pill-bg, #fff)', color: 'var(--pill-text, #fff)', fontWeight: '800' }"
+            :style="{
+              background: 'var(--pill-bg, #fff)',
+              color: 'var(--pill-text, #fff)',
+              fontWeight: '800',
+            }"
             @mouseenter="
               (e: MouseEvent) => {
                 ;(e.currentTarget as HTMLAnchorElement).style.background = 'var(--base)'
