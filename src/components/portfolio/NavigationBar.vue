@@ -29,7 +29,7 @@
 import { defineComponent, ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import type { PropType } from 'vue'
 import type { NavItem } from '../types'
-import PillNav from './vueBits/Components/PillNav/PillNav.vue'
+import PillNav from '../vueBits/Components/PillNav/PillNav.vue'
 import LanguageSwitcher from './LanguageSwitcher.vue'
 
 export default defineComponent({

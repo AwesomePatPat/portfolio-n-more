@@ -15,7 +15,7 @@
             <div class="relative rounded-2xl overflow-hidden border border-white/20 shadow-md profile-image-container bg-black/50">
               <div class="aspect-square w-72 md:w-80 lg:w-96 overflow-hidden relative">
                 <img
-                  src="../assets/me.jpg"
+                  src="/images/portfolio/me.jpg"
                   alt="Profilbild"
                   class="w-full h-full object-cover profile-image"
                 >
