@@ -172,6 +172,11 @@ export default defineComponent({
         date?: string
         images?: string[]
         achievements?: string[]
+        links?: Array<{
+          type: 'linkedin' | 'instagram' | 'youtube' | 'twitter' | 'website' | 'github' | 'facebook'
+          url: string
+          label?: string
+        }>
       }>
       return erfolgeList.map((erfolg) => ({
         id: erfolg.id,
@@ -182,6 +187,7 @@ export default defineComponent({
         date: erfolg.date,
         images: erfolg.images || [],
         achievements: erfolg.achievements || [],
+        links: erfolg.links || [],
         icon: getErfolgIcon(erfolg.id),
       }))
     })

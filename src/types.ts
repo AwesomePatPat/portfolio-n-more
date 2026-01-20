@@ -21,6 +21,12 @@ export interface Project {
   erfolgId?: number
 }
 
+export interface ExternalLink {
+  type: 'linkedin' | 'instagram' | 'youtube' | 'twitter' | 'website' | 'github' | 'facebook'
+  url: string
+  label?: string
+}
+
 export interface Erfolg {
   id: number
   title: string
@@ -31,6 +37,7 @@ export interface Erfolg {
   category?: string
   images?: string[]
   achievements?: string[]
+  links?: ExternalLink[]
 }
 
 export interface NavItem {

@@ -164,6 +164,7 @@
       "close": "Fermer"
     },
     "noImages": "Aucune image disponible",
+    "externalLinks": "Liens & Publications",
     "list": [
       {
         "id": 1,
@@ -182,6 +183,23 @@
           "/images/aichallange/aichallange_06.jpg",
           "/images/aichallange/aichallange_07.jpg",
           "/images/aichallange/aichallange_08.jpg"
+        ],
+        "links": [
+          {
+            "type": "linkedin",
+            "url": "https://www.linkedin.com/posts/ost-rapperswil-departement-informatik_nachwuchsfaemrderung-kaesnstlicheintelligenz-activity-7403818477666332672-NTNg/?utm_source=share&utm_medium=member_android&rcm=ACoAAEsPmTYBsOTEksjaGd8naCzANKRnkj9XUFE",
+            "label": "LinkedIn Post"
+          },
+          {
+            "type": "instagram",
+            "url": "https://www.instagram.com/p/DSAeF2mip_q/",
+            "label": "Instagram Post"
+          },
+          {
+            "type": "Webseite",
+            "url": "https://www.ost.ch/de/die-ost/campus/campus-rapperswil-jona/nachwuchs/ai-challenge",
+            "label": "Site d'information"
+          }
         ]
       }
     ]
