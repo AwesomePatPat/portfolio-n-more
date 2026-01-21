@@ -206,12 +206,13 @@
               <!-- Weapon Roulette Animation -->
               <div class="relative">
                 <div v-if="isSpinning" class="weapon-roulette">
-                  <div class="roulette-container">
-                    <div class="roulette-items" :style="rouletteStyle">
+                  <div class="roulette-container" ref="rouletteContainer">
+                    <div class="roulette-items" :style="rouletteStyle" ref="rouletteItems">
                       <div
                         v-for="(weapon, index) in rouletteWeapons"
                         :key="index"
                         class="roulette-item"
+                        ref="rouletteItem"
                       >
                         <div class="text-4xl mb-2">{{ getWeaponEmoji(weapon) }}</div>
                         <p class="text-white font-semibold">{{ weapon }}</p>
@@ -362,6 +363,9 @@ const previewCrosshairCode = ref('')
 const isSpinning = ref(false)
 const rouletteWeapons = ref<string[]>([])
 const rouletteOffset = ref(0)
+const rouletteContainer = ref<HTMLElement | null>(null)
+const rouletteItems = ref<HTMLElement | null>(null)
+const rouletteItem = ref<HTMLElement[]>([])
 
 // Computed
 const shouldShowCrosshair = computed(() => {
@@ -617,20 +621,20 @@ const spinRoulette = (): Promise<string> => {
     const availableWeapons = getWeaponsForRound(currentRound.value)
     const finalWeapon = getRandomItem(availableWeapons)
 
-    // Create roulette array
+    // Create roulette array with many items for smooth spinning effect
     const allWeapons = []
-    // Add random weapons at start
-    for (let i = 0; i < 20; i++) {
+    const finalPosition = 45 // Position of the final weapon in the array
+
+    // Fill array with random weapons
+    for (let i = 0; i < finalPosition; i++) {
       allWeapons.push(getRandomItem(availableWeapons))
     }
-    // Add the final weapon at a specific position
-    const finalPosition = 25
-    for (let i = allWeapons.length; i < finalPosition; i++) {
-      allWeapons.push(getRandomItem(availableWeapons))
-    }
+
+    // Place the final weapon at the designated position
     allWeapons[finalPosition] = finalWeapon
-    // Add some more after
-    for (let i = 0; i < 5; i++) {
+
+    // Add more weapons after the final weapon so it doesn't look like it ends
+    for (let i = 0; i < 15; i++) {
       allWeapons.push(getRandomItem(availableWeapons))
     }
 
@@ -641,11 +645,45 @@ const spinRoulette = (): Promise<string> => {
 
     // Calculate final position to center the final weapon
     setTimeout(() => {
-      const itemWidth = 150
-      const containerWidth = window.innerWidth
-      const targetOffset = finalPosition * itemWidth - containerWidth / 2 + itemWidth / 2
+      // Measure actual DOM element dimensions
+      if (!rouletteContainer.value || !rouletteItem.value || rouletteItem.value.length === 0) {
+        console.error('Roulette elements not found')
+        return
+      }
+
+      const firstItem = rouletteItem.value[0]
+      const itemRect = firstItem.getBoundingClientRect()
+      const containerRect = rouletteContainer.value.getBoundingClientRect()
+
+      // Get computed style to read gap
+      const itemsElement = rouletteItems.value
+      const computedStyle = itemsElement ? window.getComputedStyle(itemsElement) : null
+      const gap = computedStyle ? parseFloat(computedStyle.gap) || 20 : 20
+
+      const itemWidth = itemRect.width
+      const containerWidth = containerRect.width
+
+      // The center of item at position N is at: N * (itemWidth + gap) + itemWidth/2
+      // We want this center to align with containerWidth/2 (where the pointer is)
+      // So offset = center of item - center of container
+      const itemCenter = finalPosition * (itemWidth + gap) + itemWidth / 2
+      const containerCenter = containerWidth / 2
+      const targetOffset = itemCenter - containerCenter
+
+      console.log('Roulette Debug:', {
+        finalPosition,
+        finalWeapon,
+        itemWidth,
+        gap,
+        containerWidth,
+        itemCenter,
+        containerCenter,
+        targetOffset,
+        weaponAtPosition: allWeapons[finalPosition],
+      })
+
       rouletteOffset.value = targetOffset
-    }, 50)
+    }, 100)
 
     // End animation
     setTimeout(() => {
