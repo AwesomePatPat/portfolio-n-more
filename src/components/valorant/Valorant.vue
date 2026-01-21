@@ -622,7 +622,7 @@ const spinRoulette = (): Promise<string> => {
     const finalWeapon = getRandomItem(availableWeapons)
 
     // Create roulette array with many items for smooth spinning effect
-    const allWeapons = []
+    const allWeapons: any[] = []
     const finalPosition = 45 // Position of the final weapon in the array
 
     // Fill array with random weapons
