@@ -1,41 +1,30 @@
-# bewerbungswebeite
+# Bewerbungswebseite
 
-This template should help get you started developing with Vue 3 in Vite.
+Full-stack application with Vue.js frontend and NestJS backend.
 
-## Recommended IDE Setup
+## Project Structure
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+-  - Vue.js application with Vite
+-  - NestJS REST API
 
-## Type Support for `.vue` Imports in TS
+## Getting Started
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### Frontend
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+cd frontend
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
+Frontend runs on http://localhost:5173
 
-```sh
-npm run build
-```
+### Backend
 
-### Lint with [ESLint](https://eslint.org/)
+cd backend
+npm install
+npm run start:dev
 
-```sh
-npm run lint
-```
-# bewerbungswebseite
-# bewerbungswebseite
+Backend runs on http://localhost:3000
+
+## Development
+
+Both applications can run simultaneously. The frontend is configured to communicate with the backend API.
