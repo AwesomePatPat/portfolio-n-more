@@ -325,6 +325,34 @@ const primaries = [
 ]
 const melee = 'Knife'
 
+// Custom Crosshairs Array - Add your custom crosshair codes here
+// 20% chance (1 in 5) that one of these will be used instead of random generation
+const customCrosshairs = ref<string[]>([
+  // Example 1: Small dot with inner lines (Green)
+  '0;P;h;0;f;0;0l;4;0o;0;0a;1;0f;0;1b;0',
+  '0;P;c;6;t;6;o;0.3;f;0;0t;1;0l;5;0o;5;0a;1;0f;0;1t;10;1l;4;1o;5;1a;0.5;1m;0;1f;0',
+  '0;P;t;2;o;1;d;1;0t;10;0l;19;0v;0;0g;1;0o;1;0a;0;0e;0;1l;10;1v;0;1g;1;1o;19;1a;0;1s;0;1e;0',
+  '0;c;1;s;1;P;c;8;u;008000FF;t;3;o;1;b;1;0t;4;0l;0;0v;18;0g;1;0o;10;0a;1;0f;0;1t;10;1l;0;1v;4;1g;1;1o;7;1a;1;1m;0;1f;0',
+  '0;P;c;8;b;1;t;1;o;0;z;2;a;1;0t;2;0l;6;0v;6;0o;3;0a;0.8;0s;1;0e;1;1t;2;1l;2;1v;2;1o;10;1a;0.35;1s;1;1e;1;u;FFFFFF;d;0;h;0;0g;0;1g;0;0f;1;1f;1;0m;0;1m;1;0b;0;1b;0;m;0',
+  '0;P;c;8;b;1;t;1;o;1;z;2;a;1;0t;4;0l;20;0v;0;0o;0;0a;1;0s;1;0e;1;1t;10;1l;10;1v;0;1o;40;1a;1;1s;1;1e;1;u;000000;d;0;h;0;0g;1;1g;1;0f;0;1f;1;0m;0;1m;1;0b;1;1b;1;m;0',
+  '0;P;c;8;b;1;t;1;o;0.5;z;2;a;1;0t;8;0l;2;0v;2;0o;20;0a;1;0s;1;0e;1;1t;2;1l;8;1v;8;1o;17;1a;1;1s;1;1e;1;u;BBFF00;d;0;h;0;0g;0;1g;0;0f;0;1f;0;0m;0;1m;0;0b;1;1b;1;m;1;1;NaN;f;0',
+  '0;P;c;8;b;1;t;1;o;1;z;2;a;1;0t;2;0l;6;0v;6;0o;3;0a;0.8;0s;1;0e;1;1t;2;1l;2;1v;2;1o;10;1a;0.35;1s;1;1e;1;u;FFFFFF;d;1;h;1;0g;0;1g;0;0f;1;1f;1;0m;0;1m;1;0b;0;1b;0;m;0',
+  '0;P;c;6;o;0.35;0t;10;0l;20;0a;0;0f;0;1l;1;1o;23;1a;1;1m;0;1f;0',
+  '0;P;c;8;b;1;t;4;o;1;z;5;a;0.556;0t;10;0l;20;0v;0;0o;13;0a;1;0s;1;0e;1;1t;1;1l;1;1v;0;1o;14;1a;1;1s;0.064;1e;0.375;u;FFFFFF;d;1;h;1;0g;1;1g;1;0f;0;1f;1;0m;0;1m;1;0b;1;1b;1;m;0;1;NaN',
+  '0;P;c;8;b;1;t;1;o;1;z;1;a;1;0t;1;0l;1;0v;1;0o;0;0a;1;0s;1;0e;1;1t;2;1l;2;1v;2;1o;10;1a;0.35;1s;1;1e;1;u;FFFFFFFF;d;1;h;1;0g;0;1g;0;0f;0;1f;0;0m;0;1m;0;0b;0;1b;0;m;0',
+  '0;P;c;8;b;1;t;6;o;0.5;z;6;a;1;0t;1;0l;0;0v;20;0o;0;0a;1;0s;1;0e;0.1;1t;4;1l;0;1v;3;1o;32;1a;1;1s;1.6;1e;1;u;061843FF;d;1;h;1;0g;1;1g;1;0f;1;1f;1;0m;0;1m;1;0b;1;1b;1;m;0',
+  '0;P;u;FC5A8DFF;h;0;d;1;z;3;f;0;m;1;0t;10;0l;0;0v;3;0g;1;0o;1;0a;1;0f;0;1t;9;1v;0;1g;1;1o;3;1a;1;1m;0;1f;0',
+  '0;P;c;8;u;D48787FF;h;0;d;1;b;1;z;6;0t;10;0v;0;0g;1;0o;2;0a;1;0f;0;1t;6;1v;10;1g;1;1o;8;1a;1;1m;0;1f;0',
+  '0;P;c;7;h;0;f;0;0t;3;0l;1;0v;1;0g;1;0o;1;0a;1;0f;0;1t;0;1l;0;1o;0;1a;0;1f;0',
+  '0;P;c;5;h;0;0l;4;0o;2;0a;1;0f;0;1b;0',
+  '0;P;c;7;o;1;d;1;f;0;0b;0;1b;0',
+  '0;P;o;1;f;0;0t;4;0l;1;0o;5;0a;0;0f;0;1l;4;1o;3;1a;0;1m;0;1f;0'
+  
+
+  // Add your custom crosshairs below this line!
+  // To get a crosshair code: Go to Valorant > Settings > Crosshair > Copy the code
+])
+
 // Settings
 const selectedAgents = ref<string[]>([])
 const weaponType = ref<'both' | 'sidearms' | 'primaries'>('both')
@@ -440,7 +468,13 @@ const getRandomItem = <T,>(array: T[]): T => {
 }
 
 // Valorant Crosshair Code Generation
-const generateValorantCrosshairCode = (): string => {
+const generateValorantCrosshairCode = (forceRandom: boolean = false): string => {
+  // 1 in 5 chance (20%) to use a custom crosshair
+  if (!forceRandom && customCrosshairs.value.length > 0 && Math.random() < 0.33) {
+    return getRandomItem(customCrosshairs.value)
+  }
+
+  // Generate random crosshair
   // Valorant crosshair format breakdown:
   // 0;P - version and profile type
   // c;1 - color (0=white, 1=green, 2=yellow-green, 3=yellow, 4=cyan, 5=pink, 6=red, 7=custom)
@@ -492,7 +526,7 @@ const generateValorantCrosshairCode = (): string => {
   return `0;P;c;${color};t;${type};o;${outlineOpacity};d;${centerDot};z;${centerDotThickness};a;${centerDotOpacity};0t;${innerThickness};0l;${innerLength};0a;${innerOpacity};0o;${innerOffset};0m;${innerMovementError};0s;${innerFiringError};0e;${innerFixedError};1t;${outerThickness};1l;${outerLength};1a;${outerOpacity};1o;${outerOffset};1m;${outerMovementError};1s;${outerFiringError};1e;${outerFixedError}`
 }
 
-// Parse Valorant crosshair code to visual representation (simplified)
+// Parse Valorant crosshair code to visual representation with accurate scaling
 const parseCrosshairCode = (code: string): any => {
   const parts = code.split(';')
   const params: any = {}
@@ -505,25 +539,29 @@ const parseCrosshairCode = (code: string): any => {
 
   const colors = ['#FFFFFF', '#00FF00', '#7FFF00', '#FFFF00', '#00FFFF', '#FF00FF', '#FF4655']
 
+  // More accurate scaling to match Valorant's crosshair system
+  // Based on Valorant's actual pixel scaling
+  const pixelScale = 2.5 // Base scaling factor for better visibility
+
   return {
     color: colors[params['c'] || 0] || '#FFFFFF',
     outlineOpacity: params['o'] || 0.5,
     centerDot: params['d'] === 1,
     centerDotOpacity: params['a'] || 1,
-    centerDotSize: (params['z'] || 1) * 2,
+    centerDotSize: (params['z'] || 1) * pixelScale, // Accurate center dot size
     innerLines: {
       show: (params['0l'] || 0) > 0,
       opacity: params['0a'] || 1,
-      length: (params['0l'] || 10) * 2,
-      thickness: (params['0t'] || 2) * 1.5,
-      offset: (params['0o'] || 3) * 2,
+      length: (params['0l'] || 10) * pixelScale, // Accurate length
+      thickness: (params['0t'] || 2) * pixelScale, // Accurate thickness
+      offset: (params['0o'] || 3) * pixelScale, // Accurate offset
     },
     outerLines: {
       show: (params['1l'] || 0) > 0,
       opacity: params['1a'] || 1,
-      length: (params['1l'] || 10) * 2,
-      thickness: (params['1t'] || 2) * 1.5,
-      offset: (params['1o'] || 8) * 2,
+      length: (params['1l'] || 10) * pixelScale, // Accurate length
+      thickness: (params['1t'] || 2) * pixelScale, // Accurate thickness
+      offset: (params['1o'] || 8) * pixelScale, // Accurate offset
     },
   }
 }
@@ -781,6 +819,7 @@ const CrosshairPreview = defineComponent({
 
       // Center Dot
       if (ch.centerDot) {
+        const outlineWidth = ch.outlineOpacity > 0 ? 1 : 0
         elements.push(
           h('div', {
             style: {
@@ -794,7 +833,9 @@ const CrosshairPreview = defineComponent({
               backgroundColor: ch.color,
               opacity: ch.centerDotOpacity,
               boxShadow:
-                ch.outlineOpacity > 0 ? `0 0 0 1px rgba(0, 0, 0, ${ch.outlineOpacity})` : 'none',
+                ch.outlineOpacity > 0
+                  ? `0 0 0 ${outlineWidth}px rgba(0, 0, 0, ${ch.outlineOpacity})`
+                  : 'none',
               zIndex: 10,
             },
           }),
@@ -803,12 +844,10 @@ const CrosshairPreview = defineComponent({
 
       // Inner Lines
       if (ch.innerLines && ch.innerLines.show) {
+        const outlineWidth = ch.outlineOpacity > 0 ? 1 : 0
         const innerOutline =
           ch.outlineOpacity > 0
-            ? `-1px 0 0 rgba(0, 0, 0, ${ch.outlineOpacity}),
-               1px 0 0 rgba(0, 0, 0, ${ch.outlineOpacity}),
-               0 -1px 0 rgba(0, 0, 0, ${ch.outlineOpacity}),
-               0 1px 0 rgba(0, 0, 0, ${ch.outlineOpacity})`
+            ? `0 0 0 ${outlineWidth}px rgba(0, 0, 0, ${ch.outlineOpacity})`
             : 'none'
 
         // Top
@@ -816,7 +855,7 @@ const CrosshairPreview = defineComponent({
           h('div', {
             style: {
               position: 'absolute',
-              top: `calc(50% - ${ch.innerLines.offset}px - ${ch.innerLines.length}px)`,
+              top: `calc(50% - ${ch.innerLines.offset + ch.innerLines.length}px)`,
               left: '50%',
               transform: 'translateX(-50%)',
               width: `${ch.innerLines.thickness}px`,
@@ -853,7 +892,7 @@ const CrosshairPreview = defineComponent({
             style: {
               position: 'absolute',
               top: '50%',
-              left: `calc(50% - ${ch.innerLines.offset}px - ${ch.innerLines.length}px)`,
+              left: `calc(50% - ${ch.innerLines.offset + ch.innerLines.length}px)`,
               transform: 'translateY(-50%)',
               width: `${ch.innerLines.length}px`,
               height: `${ch.innerLines.thickness}px`,
@@ -886,12 +925,10 @@ const CrosshairPreview = defineComponent({
 
       // Outer Lines
       if (ch.outerLines && ch.outerLines.show) {
+        const outlineWidth = ch.outlineOpacity > 0 ? 1 : 0
         const outerOutline =
           ch.outlineOpacity > 0
-            ? `-1px 0 0 rgba(0, 0, 0, ${ch.outlineOpacity}),
-               1px 0 0 rgba(0, 0, 0, ${ch.outlineOpacity}),
-               0 -1px 0 rgba(0, 0, 0, ${ch.outlineOpacity}),
-               0 1px 0 rgba(0, 0, 0, ${ch.outlineOpacity})`
+            ? `0 0 0 ${outlineWidth}px rgba(0, 0, 0, ${ch.outlineOpacity})`
             : 'none'
 
         // Top
@@ -899,7 +936,7 @@ const CrosshairPreview = defineComponent({
           h('div', {
             style: {
               position: 'absolute',
-              top: `calc(50% - ${ch.outerLines.offset}px - ${ch.outerLines.length}px)`,
+              top: `calc(50% - ${ch.outerLines.offset + ch.outerLines.length}px)`,
               left: '50%',
               transform: 'translateX(-50%)',
               width: `${ch.outerLines.thickness}px`,
@@ -936,7 +973,7 @@ const CrosshairPreview = defineComponent({
             style: {
               position: 'absolute',
               top: '50%',
-              left: `calc(50% - ${ch.outerLines.offset}px - ${ch.outerLines.length}px)`,
+              left: `calc(50% - ${ch.outerLines.offset + ch.outerLines.length}px)`,
               transform: 'translateY(-50%)',
               width: `${ch.outerLines.length}px`,
               height: `${ch.outerLines.thickness}px`,

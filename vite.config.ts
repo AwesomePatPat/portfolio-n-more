@@ -7,14 +7,18 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueDevTools(),
-    tailwindcss(),
-  ],
+  plugins: [vue(), vueDevTools(), tailwindcss()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+  server: {
+    host: '0.0.0.0', // Listen on all network interfaces (wichtig für WSL)
+    port: 5173,
+    strictPort: false, // Falls Port belegt ist, nimm einen anderen
+    hmr: {
+      host: 'localhost', // Hot Module Replacement über localhost
     },
   },
 })
