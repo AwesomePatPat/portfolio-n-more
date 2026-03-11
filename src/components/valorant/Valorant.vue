@@ -304,6 +304,7 @@ const agents = [
   'Vyse',
   'Tejo',
   'Veto',
+  'Waylay',
 ]
 
 // Weapons
@@ -346,8 +347,7 @@ const customCrosshairs = ref<string[]>([
   '0;P;c;7;h;0;f;0;0t;3;0l;1;0v;1;0g;1;0o;1;0a;1;0f;0;1t;0;1l;0;1o;0;1a;0;1f;0',
   '0;P;c;5;h;0;0l;4;0o;2;0a;1;0f;0;1b;0',
   '0;P;c;7;o;1;d;1;f;0;0b;0;1b;0',
-  '0;P;o;1;f;0;0t;4;0l;1;0o;5;0a;0;0f;0;1l;4;1o;3;1a;0;1m;0;1f;0'
-  
+  '0;P;o;1;f;0;0t;4;0l;1;0o;5;0a;0;0f;0;1l;4;1o;3;1a;0;1m;0;1f;0',
 
   // Add your custom crosshairs below this line!
   // To get a crosshair code: Go to Valorant > Settings > Crosshair > Copy the code
