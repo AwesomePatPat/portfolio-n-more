@@ -15,15 +15,6 @@
     "cta": "Mehr erfahren",
     "scroll": "Scroll für mehr"
   },
-  "about": {
-    "badge": "Über mich",
-    "title": "Meine",
-    "titleHighlight": "Geschichte",
-    "paragraph1": "Ich bin ein motivierter Entwickler mit Erfahrung in der Erstellung benutzerfreundlicher Webanwendungen. Meine Reise begann mit HTML und CSS und führte mich zur Beherrschung moderner Frameworks wie {vue} und {express}.",
-    "paragraph2": "In meinem ersten Programmier-Projekt bei Swisscom hatte ich die Möglichkeit die Basic Skills wie HTML, CSS und JavaScript zu lernen. Später im Projekt habe ich dann den ersten Einblick in das Framework Angular bekommen.",
-    "paragraph3": "In späteren Projekten habe ich dann mit Vue.js und Express.js gearbeitet. Ich hatte auch die Möglichkeit andere Lernende zu betreuen und ihnen mein Wissen weiterzugeben als Rolle eines Projektanbieters.",
-    "cta": "Meine Projekte"
-  },
   "skills": {
     "badge": "Technisches Profil",
     "title": "Erlernte",
@@ -36,7 +27,7 @@
     "levels": {
       "native": "Muttersprache",
       "fluent": "Fliessend",
-      "basic": "Grundkenntnisse"
+      "basic": "Gut"
     },
     "list": [
       {
@@ -49,7 +40,7 @@
       },
       {
         "name": "Französisch",
-        "level": "Fliessend"
+        "level": "Gut"
       }
     ]
   },
@@ -170,7 +161,7 @@
         "id": 1,
         "title": "AI-Challenge@OST - 1. Platz",
         "description": "Gewinner der AI-Challenge an der Fachhochschule Ostschweiz mit selbstfahrendem Auto",
-        "longDescription": "An der AI-Challenge@OST habe ich als externes Nebenprojekt an der Fachhochschule Ostschweiz teilgenommen und zusammen mit meinem Dreierteam ein selbstfahrendes Fahrzeug von Grund auf programmiert. Die Challenge erstreckte sich über drei Events am Campus Rapperswil-Jona zwischen Oktober und Dezember 2025.<br><br>Wir starteten am 25. Oktober mit einer Einführung in die AI-Programmierung. Zwischen den Events arbeiteten wir remote an verschiedenen Aufgaben, die bereits für die finale Challenge bewertet wurden. Unser Coach unterstützte uns dabei kontinuierlich.<br><br>Unser Fahrmodell musste komplexe Herausforderungen meistern: Das Auto reagierte autonom auf Verkehrsschilder, folgte präzise einer Linie und bewältigte verschiedene Lichtverhältnisse sowie wechselnde Hintergründe. Wir investierten zwischen den Events ca. 5-8 Stunden pro Woche in die Entwicklung und Optimierung.<br><br>Am 6. Dezember traten wir gegen alle anderen Teams an und holten den ersten Platz. Dafür gewannen wir Digitec Gutscheine im Wert von CHF 1000 pro Person.",
+        "longDescription": "An der AI-Challenge@OST habe ich als externes Nebenprojekt an der Fachhochschule Ostschweiz teilgenommen und zusammen mit meinem Dreierteam ein selbstfahrendes Fahrzeug von Grund auf programmiert. Die Challenge erstreckte sich über drei Events am Campus Rapperswil-Jona zwischen Oktober und Dezember 2025.<br><br>Wir starteten am 25. Oktober mit einer Einführung in die AI-Programmierung. Zwischen den Events arbeiteten wir remote an verschiedenen Aufgaben, die bereits für die finale Challenge bewertet wurden. Unser Coach unterstützte uns dabei kontinuierlich.<br><br>Unser Fahrmodell musste komplexe Herausforderungen meistern: Das Auto reagierte autonom auf Verkehrsschilder, folgte präzise einer Linie und bewältigte verschiedene Lichtverhältnisse sowie wechselnde Hintergründe. Wir investierten zwischen den Events ca. 5-8 Stunden pro Woche in die Entwicklung und Optimierung.<br><br>Am 6. Dezember traten wir gegen alle anderen Teams an und holten den ersten Platz.",
         "category": "Wettbewerb",
         "date": "06.12.2025",
         "images": [

@@ -37,7 +37,6 @@ import { defineComponent, ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import NavigationBar from '../components/portfolio/NavigationBar.vue'
 import IntroSection from '../components/portfolio/IntroSection.vue'
-import AboutSection from '../components/portfolio/AboutSection.vue'
 import SkillsSection from '../components/portfolio/SkillsSection.vue'
 import LanguagesSection from '../components/portfolio/LanguagesSection.vue'
 import ProjectsSection from '../components/portfolio/ProjectsSection.vue'
@@ -50,7 +49,6 @@ export default defineComponent({
   components: {
     NavigationBar,
     IntroSection,
-    AboutSection,
     SkillsSection,
     LanguagesSection,
     ProjectsSection,
@@ -77,6 +75,7 @@ export default defineComponent({
       { name: 'Express.js', color: 'purple' },
       { name: 'Firebase', color: 'yellow' },
       { name: 'Git', color: 'blue' },
+      { name: 'Go', color: 'blue' },
       { name: 'HTML', color: 'green' },
       { name: 'Java', color: 'purple' },
       { name: 'JavaScript', color: 'yellow' },

@@ -73,13 +73,13 @@
                 </div>
                 <div v-else class="flex">
                   <div
-                    v-for="i in 2"
+                    v-for="i in 3"
                     :key="i"
                     class="w-2 h-8 mx-1 rounded-full bg-blue-500 level-bar"
                     :style="{ 'transition-delay': `${i * 50}ms` }"
                   ></div>
                   <div
-                    v-for="i in 3"
+                    v-for="i in 2"
                     :key="i + 2"
                     class="w-2 h-8 mx-1 rounded-full bg-white/20 level-bar-inactive"
                     :style="{ 'transition-delay': `${(i + 2) * 50}ms` }"

@@ -1,6 +1,8 @@
 <template>
   <div ref="containerRef" class="contact-background">
-    <Balatro v-if="isReady" :is-rotate="false" :mouse-interaction="false" :pixel-filter="700" />
+    <div class="background-layer">
+      <Balatro v-if="isReady" :is-rotate="false" :mouse-interaction="false" :pixel-filter="700" />
+    </div>
     <div class="content-layer">
       <BounceCards
         :images="images"
@@ -15,7 +17,9 @@
         class="custom-bounce-cards"
       />
     </div>
-    <CRTEffect v-if="isReady" :scanline-intensity="0.3" :vignette-intensity="1" />
+    <div class="effects-layer">
+      <CRTEffect v-if="isReady" :scanline-intensity="0.3" :vignette-intensity="1" />
+    </div>
   </div>
 </template>
 
@@ -65,6 +69,18 @@ const transformStyles = [
   width: 100%;
   height: 100vh;
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .content-layer {
@@ -76,9 +92,22 @@ const transformStyles = [
   display: flex;
   align-items: center;
   justify-content: center;
+  touch-action: none;
+  pointer-events: none;
 }
 
 .custom-bounce-cards {
   z-index: 100;
+  pointer-events: auto;
+}
+
+.effects-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  pointer-events: none;
 }
 </style>

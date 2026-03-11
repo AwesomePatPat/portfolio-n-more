@@ -15,15 +15,6 @@
     "cta": "En savoir plus",
     "scroll": "Faites défiler pour plus"
   },
-  "about": {
-    "badge": "À propos de moi",
-    "title": "Mon",
-    "titleHighlight": "Histoire",
-    "paragraph1": "Je suis un développeur motivé avec de l'expérience dans la création d'applications web conviviales. Mon parcours a commencé avec HTML et CSS et m'a conduit à maîtriser des frameworks modernes comme {vue} et {express}.",
-    "paragraph2": "Dans mon premier projet de programmation chez Swisscom, j'ai eu l'opportunité d'apprendre les compétences de base telles que HTML, CSS et JavaScript. Plus tard dans le projet, j'ai eu mon premier aperçu du framework Angular.",
-    "paragraph3": "Dans les projets ultérieurs, j'ai travaillé avec Vue.js et Express.js. J'ai également eu l'opportunité d'encadrer d'autres apprentis et de partager mes connaissances avec eux dans le rôle de fournisseur de projet.",
-    "cta": "Mes Projets"
-  },
   "skills": {
     "badge": "Profil Technique",
     "title": "Technologies",
@@ -36,7 +27,7 @@
     "levels": {
       "native": "Langue Maternelle",
       "fluent": "Courant",
-      "basic": "Connaissances de Base"
+      "basic": "Bien"
     },
     "list": [
       {
@@ -49,7 +40,7 @@
       },
       {
         "name": "Français",
-        "level": "Courant"
+        "level": "Bien"
       }
     ]
   },
@@ -170,7 +161,7 @@
         "id": 1,
         "title": "AI-Challenge@OST - 1ère Place",
         "description": "Gagnant du défi AI à l'Université des Sciences Appliquées de Suisse Orientale avec voiture autonome",
-        "longDescription": "J'ai participé à l'AI-Challenge@OST en tant que projet parallèle externe à l'Université des Sciences Appliquées de Suisse Orientale et, avec mon équipe de trois personnes, j'ai programmé un véhicule autonome à partir de zéro. Le défi s'est déroulé sur trois événements au campus de Rapperswil-Jona entre octobre et décembre 2025.<br><br>Nous avons commencé le 25 octobre avec une introduction à la programmation de l'IA. Entre les événements, nous avons travaillé à distance sur diverses tâches qui étaient déjà évaluées pour le défi final. Notre coach nous a soutenus en permanence.<br><br>Notre modèle de conduite devait maîtriser des défis complexes : La voiture réagissait de manière autonome aux panneaux de circulation, suivait une ligne avec précision et gérait différentes conditions d'éclairage et des arrière-plans changeants. Nous avons investi environ 5 à 8 heures par semaine entre les événements dans le développement et l'optimisation.<br><br>Le 6 décembre, nous avons concouru contre toutes les autres équipes et avons remporté la première place. Pour cela, nous avons gagné des bons Digitec d'une valeur de CHF 1000 par personne.",
+        "longDescription": "J'ai participé à l'AI-Challenge@OST en tant que projet parallèle externe à l'Université des Sciences Appliquées de Suisse Orientale et, avec mon équipe de trois personnes, j'ai programmé un véhicule autonome à partir de zéro. Le défi s'est déroulé sur trois événements au campus de Rapperswil-Jona entre octobre et décembre 2025.<br><br>Nous avons commencé le 25 octobre avec une introduction à la programmation de l'IA. Entre les événements, nous avons travaillé à distance sur diverses tâches qui étaient déjà évaluées pour le défi final. Notre coach nous a soutenus en permanence.<br><br>Notre modèle de conduite devait maîtriser des défis complexes : La voiture réagissait de manière autonome aux panneaux de circulation, suivait une ligne avec précision et gérait différentes conditions d'éclairage et des arrière-plans changeants. Nous avons investi environ 5 à 8 heures par semaine entre les événements dans le développement et l'optimisation.<br><br>Le 6 décembre, nous avons concouru contre toutes les autres équipes et avons remporté la première place.",
         "category": "Compétition",
         "date": "06.12.2025",
         "images": [

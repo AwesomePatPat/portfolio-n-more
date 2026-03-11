@@ -191,7 +191,8 @@ export default defineComponent({
         "Java": "logos:java",
         "Springboot": "logos:spring-icon",
         "MCP": "carbon:bot",
-        "OpenTofu": "simple-icons:opentofu"
+        "OpenTofu": "simple-icons:opentofu",
+        "Go": "simple-icons:go"
       };
 
       return iconMap[skillName] || "mdi:code-tags";

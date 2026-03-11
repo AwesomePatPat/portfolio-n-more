@@ -70,4 +70,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Prevent pull-to-refresh and overscroll effects that can interfere with dragging */
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }
