@@ -1,7 +1,6 @@
 {
   "nav": {
     "intro": "Intro",
-    "about": "About",
     "skills": "Skills",
     "languages": "Languages",
     "projects": "Projects",
@@ -11,7 +10,7 @@
     "badge": "Portfolio 2025",
     "greeting": "Hello, I'm",
     "name": "Patrick",
-    "description": "I'm 17 years old and currently in my third year of apprenticeship as an Application Developer EFZ. I started my apprenticeship at Swisscom (Switzerland) Ltd. in summer 2023.",
+    "description": "I'm 18 years old and currently in my third year of apprenticeship as an Application Developer EFZ. I started my apprenticeship at Swisscom (Switzerland) Ltd. in summer 2023.",
     "cta": "Learn more",
     "scroll": "Scroll for more"
   },
@@ -118,23 +117,23 @@
         "longDescription": "In the project, I started with a starter app to learn the required technologies (Springboot, AWS, MCP and more). Later we worked on productive orders to simplify internal processes with AI.",
         "provider": "Gregory Hubacher",
         "startDate": "04.08.2025",
-        "endDate": "30.01.2026",
-        "erfolgId": 1
+        "endDate": "30.01.2026"
       },
       {
         "id": 8,
-        "title": "AI-Challange@Ost",
-        "description": "Nebenprojekt an der Fachhochschule Ostschweiz, bei dem ich mit meinem Dreierteam selbstfahrende Autos mit KI programmierte. Wir entwickelten ein Fahrmodell, das auf Schilder reagiert und Linien bei verschiedenen Lichtverhältnissen folgt, und holten den ersten Platz.",
-        "longDescription": "An der AI-Challenge@OST habe ich als externes Nebenprojekt an der Fachhochschule Ostschweiz teilgenommen und zusammen mit meinem Dreierteam ein selbstfahrendes Fahrzeug von Grund auf programmiert. Die Challenge erstreckte sich über drei Events am Campus Rapperswil-Jona zwischen Oktober und Dezember 2025.\n\nWir starteten am 25. Oktober mit einer Einführung in die AI-Programmierung. Zwischen den Events arbeiteten wir remote an verschiedenen Aufgaben, die bereits für die finale Challenge bewertet wurden. Unser Coach unterstützte uns dabei kontinuierlich.\n\nUnser Fahrmodell musste komplexe Herausforderungen meistern: Das Auto reagierte autonom auf Verkehrsschilder, folgte präzise einer Linie und bewältigte verschiedene Lichtverhältnisse sowie wechselnde Hintergründe. Wir investierten zwischen den Events ca. 5-8 Stunden pro Woche in die Entwicklung und Optimierung.\n\nAm 6. Dezember traten wir gegen alle anderen Teams an und holten den ersten Platz. Dafür gewannen wir Digitec Gutscheine im Wert von CHF 1000 pro Person. Das Event bot mir nicht nur technisches Know-How im Bereich AI und autonomes Fahren, sondern auch wertvolle Erfahrungen in Teamarbeit und Problemlösung unter Zeitdruck. Für mehr Detail: <a href=\"https://www.ost.ch/de/die-ost/campus/campus-rapperswil-jona/nachwuchs/ai-challenge\" target=\"_blank\" class=\"text-white hover:text-white/80 underline\">AI-Challange@Ost</a>",
+        "title": "AI-Challenge@OST",
+        "description": "Side project at the University of Applied Sciences Eastern Switzerland, where I programmed self-driving cars with AI together with my team of three. We developed a driving model that reacts to signs and follows lines in various lighting conditions, and won first place.",
+        "longDescription": "At the AI-Challenge@OST I participated as an external side project at the University of Applied Sciences Eastern Switzerland and together with my team of three programmed a self-driving vehicle from scratch. The challenge spanned three events at the Rapperswil-Jona campus between October and December 2025.\n\nWe started on October 25 with an introduction to AI programming. Between events, we worked remotely on various tasks that were already evaluated for the final challenge. Our coach supported us continuously.\n\nOur driving model had to master complex challenges: The car reacted autonomously to traffic signs, followed a line precisely, and handled different lighting conditions and changing backgrounds. We invested about 5-8 hours per week between events in development and optimization.\n\nOn December 6, we competed against all other teams and won first place. We won Digitec vouchers worth CHF 1000 per person. The event offered me not only technical know-how in the field of AI and autonomous driving, but also valuable experience in teamwork and problem solving under time pressure. For more details: <a href=\"https://www.ost.ch/de/die-ost/campus/campus-rapperswil-jona/nachwuchs/ai-challenge\" target=\"_blank\" class=\"text-white hover:text-white/80 underline\">AI-Challenge@OST</a>",
         "provider": "Claudia Furrer",
         "startDate": "25.10.2025",
-        "endDate": "06.12.2025"
+        "endDate": "06.12.2025",
+        "erfolgId": 1
       },
       {
         "id": 9,
         "title": "[M]INI NET",
-        "description": "Lernendenteam @ [M]INI NET - KI und Automatisierungsteams",
-        "longDescription": "Ich bin bei [M]INI NET die erste Ansprechperson und erfasse Aufträge in unserem Auftragspool. Dabei repräsentiere ich [M]INI NET professionell gegenüber unseren Kunden. Das Team unterstützt mich dabei, meine Komfortzone zu verlassen und auch mal bereichsübergreifend zu arbeiten.\n\nZusätzlich zu unserem bestehenden Media- und Admin-Team kann ich von Anfang an beim Aufbau eines neuen KI- und Automatisierungsteams dabei sein! In diesem Team kann ich die Zukunft aktiv mitgestalten und Verantwortung übernehmen.\n\nKI und Automatisierung sind zwei der spannendsten Themen unserer Zeit. Auch wir bei [M]INI NET wollen diese Entwicklungen aktiv nutzen und vorantreiben. Dabei lerne ich, moderne Tools produktiv einzusetzen und mein Wissen direkt in die Organisation einzubringen.\n\nIn diesem Pilotprojekt bilde ich mit anderen ein starkes Team, das Innovation, Kreativität und technisches Verständnis vereint. Gemeinsam gestalten wir Neues, probieren aus und setzen eigene Ideen um – unterstützt von [M]INI NET und erfahrenen Fachcoaches.",
+        "description": "Apprentice team @ [M]INI NET - AI and Automation teams",
+        "longDescription": "At [M]INI NET I am the first point of contact and record orders in our order pool. In doing so, I represent [M]INI NET professionally towards our customers. The team supports me in stepping out of my comfort zone and occasionally working cross-functionally.\n\nIn addition to our existing Media and Admin team, I can be part of building a new AI and Automation team from the very beginning! In this team, I can actively shape the future and take on responsibility.\n\nAI and Automation are two of the most exciting topics of our time. We at [M]INI NET also want to actively use and drive these developments forward. In doing so, I learn to use modern tools productively and contribute my knowledge directly to the organization.\n\nIn this pilot project, I form a strong team with others that combines innovation, creativity, and technical understanding. Together we create new things, experiment, and implement our own ideas – supported by [M]INI NET and experienced specialist coaches.",
         "provider": "Elia Licari",
         "startDate": "02.02.2026",
         "endDate": "31.07.2027"

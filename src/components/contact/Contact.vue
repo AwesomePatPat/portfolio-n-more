@@ -50,7 +50,7 @@ const images = [
 
 const links = [
   'https://github.com/AwesomePatPat',
-  'https://www.instagram.com/paduunknownnumber/',
+  'https://www.instagram.com/_paaadi_/',
   'https://discord.com/users/798931505262362654',
   'mailto:patrick1eichhorn@gmail.com',
 ]

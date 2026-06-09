@@ -1,7 +1,6 @@
 {
   "nav": {
     "intro": "Intro",
-    "about": "About",
     "skills": "Skills",
     "languages": "Sprachen",
     "projects": "Projekte",
@@ -11,7 +10,7 @@
     "badge": "Portfolio 2025",
     "greeting": "Hallo, ich bin",
     "name": "Patrick",
-    "description": "Ich bin 17 Jahre alt und zurzeit in meinem dritten Lehrjahr als Applikationsentwickler EFZ. Ich habe im Sommer 2023 meine Lehre bei Swisscom (Schweiz) AG gestartet.",
+    "description": "Ich bin 18 Jahre alt und zurzeit in meinem dritten Lehrjahr als Applikationsentwickler EFZ. Ich habe im Sommer 2023 meine Lehre bei Swisscom (Schweiz) AG gestartet.",
     "cta": "Mehr erfahren",
     "scroll": "Scroll für mehr"
   },

@@ -10,7 +10,6 @@
 
     <div class="relative z-10">
       <IntroSection id="intro" />
-      <AboutSection id="about" />
       <SkillsSection id="skills" :skills="skills" />
       <LanguagesSection id="languages" :languages="languages" />
       <ProjectsSection id="projects" :projects="projects" />
@@ -60,7 +59,6 @@ export default defineComponent({
 
     const navItems = computed<NavItem[]>(() => [
       { id: 'intro', name: t('nav.intro') },
-      { id: 'about', name: t('nav.about') },
       { id: 'skills', name: t('nav.skills') },
       { id: 'languages', name: t('nav.languages') },
       { id: 'projects', name: t('nav.projects') },

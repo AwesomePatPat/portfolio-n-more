@@ -6,23 +6,34 @@
       height: typeof containerHeight === 'number' ? `${containerHeight}px` : containerHeight,
     }"
   >
+    <!--
+      Outer wrapper owns the base position (rotate/translate) and the hover
+      "push" animations. The inner card is what GSAP Draggable moves (x/y) and
+      what the entrance animation scales. Keeping these on two separate elements
+      prevents Draggable's transform from fighting the layout/hover transform.
+    -->
     <div
       v-for="(src, idx) in images"
       :key="idx"
-      ref="cardRefs"
-      class="absolute w-[200px] h-[280px] opacity-0 cursor-grab active:cursor-grabbing pixel-corners draggable-card"
+      ref="wrapperRefs"
+      class="absolute w-[200px] h-[280px]"
       :style="{ transform: transformStyles[idx] ?? 'none' }"
       @mouseenter="() => pushSiblings(idx)"
       @mouseleave="resetSiblings"
     >
-      <img
-        class="absolute inset-0 w-full h-full object-contain z-[2] transition-opacity duration-700 ease-out pointer-events-none"
-        :src="src"
-        :alt="`card-${idx}`"
-        :style="{ opacity: imageLoaded[idx] ? 1 : 0 }"
-        @load="() => onImageLoad(idx)"
-        @error="() => onImageError(idx)"
-      />
+      <div
+        ref="cardRefs"
+        class="w-full h-full opacity-0 cursor-grab active:cursor-grabbing pixel-corners draggable-card"
+      >
+        <img
+          class="absolute inset-0 w-full h-full object-contain z-[2] transition-opacity duration-700 ease-out pointer-events-none"
+          :src="src"
+          :alt="`card-${idx}`"
+          :style="{ opacity: imageLoaded[idx] ? 1 : 0 }"
+          @load="() => onImageLoad(idx)"
+          @error="() => onImageError(idx)"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -67,10 +78,12 @@ const props = withDefaults(defineProps<BounceCardsProps>(), {
 })
 
 const imageLoaded = ref(new Array(props.images.length).fill(false))
+const wrapperRefs = ref<HTMLElement[]>([])
 const cardRefs = ref<HTMLElement[]>([])
 const draggables = ref<Draggable[]>([])
 const isDragging = ref<boolean[]>(new Array(props.images.length).fill(false))
 const wasDragged = ref<boolean[]>(new Array(props.images.length).fill(false))
+let draggablesInitialized = false
 
 const getNoRotationTransform = (transformStr: string): string => {
   const hasRotate = /rotate\([\s\S]*?\)/.test(transformStr)
@@ -102,13 +115,13 @@ const pushSiblings = (hoveredIdx: number) => {
 
   props.images.forEach((_, i) => {
     if (isDragging.value[i]) return
-    gsap.killTweensOf(cardRefs.value[i])
+    gsap.killTweensOf(wrapperRefs.value[i])
 
     const baseTransform = props.transformStyles[i] || 'none'
 
     if (i === hoveredIdx) {
       const noRotationTransform = getNoRotationTransform(baseTransform)
-      gsap.to(cardRefs.value[i], {
+      gsap.to(wrapperRefs.value[i], {
         transform: noRotationTransform,
         duration: 0.4,
         ease: 'back.out(1.4)',
@@ -120,7 +133,7 @@ const pushSiblings = (hoveredIdx: number) => {
       const distance = Math.abs(hoveredIdx - i)
       const delay = distance * 0.05
 
-      gsap.to(cardRefs.value[i], {
+      gsap.to(wrapperRefs.value[i], {
         transform: pushedTransform,
         duration: 0.4,
         ease: 'back.out(1.4)',
@@ -136,9 +149,9 @@ const resetSiblings = () => {
 
   props.images.forEach((_, i) => {
     if (isDragging.value[i]) return
-    gsap.killTweensOf(cardRefs.value[i])
+    gsap.killTweensOf(wrapperRefs.value[i])
     const baseTransform = props.transformStyles[i] || 'none'
-    gsap.to(cardRefs.value[i], {
+    gsap.to(wrapperRefs.value[i], {
       transform: baseTransform,
       duration: 0.4,
       ease: 'back.out(1.4)',
@@ -155,9 +168,21 @@ const onImageError = (idx: number) => {
   imageLoaded.value[idx] = true
 }
 
+// Cached images can fire their native `load` event before Vue attaches the
+// listener, which would leave the card permanently invisible. Detect any
+// already-complete images and mark them loaded.
+const syncLoadedImages = () => {
+  cardRefs.value.forEach((card, idx) => {
+    const img = card?.querySelector('img')
+    if (img && (img as HTMLImageElement).complete) {
+      imageLoaded.value[idx] = true
+    }
+  })
+}
+
 const playEntranceAnimation = () => {
   gsap.killTweensOf(cardRefs.value)
-  gsap.set(cardRefs.value, { opacity: 0, scale: 0 })
+  gsap.set(cardRefs.value, { opacity: 0, scale: 0, x: 0, y: 0 })
 
   gsap.fromTo(
     cardRefs.value,
@@ -174,86 +199,90 @@ const playEntranceAnimation = () => {
 }
 
 const initializeDraggables = () => {
-  console.log('Initializing draggables for', cardRefs.value.length, 'cards')
+  if (draggablesInitialized) return
+  draggablesInitialized = true
+
   cardRefs.value.forEach((card, idx) => {
-    if (card) {
-      try {
-        const draggable = Draggable.create(card, {
-          type: 'x,y',
-          inertia: false,
-          zIndexBoost: false,
-          dragClickables: true,
-          allowEventDefault: false,
-          allowContextMenu: false,
-          allowNativeTouchScrolling: false,
-          clickableTest: () => true,
-          minimumMovement: 3,
-          onPress: function () {
-            console.log('Card pressed:', idx)
-            wasDragged.value[idx] = false
-          },
-          onDragStart: function () {
-            console.log('Drag started:', idx)
-            isDragging.value[idx] = true
-            wasDragged.value[idx] = true
-            gsap.to(this.target, {
-              scale: 1.1,
-              duration: 0.2,
-              ease: 'power2.out',
-            })
-          },
-          onDragEnd: function () {
-            console.log('Drag ended:', idx)
-            isDragging.value[idx] = false
-            // Snap back to original position (x:0, y:0 relative to transform origin)
-            gsap.to(this.target, {
-              x: 0,
-              y: 0,
-              scale: 1,
-              duration: 0.5,
-              ease: 'elastic.out(1, 0.5)',
-            })
-          },
-          onClick: function (e) {
-            console.log('Card clicked:', idx, 'wasDragged:', wasDragged.value[idx])
-            if (!wasDragged.value[idx] && props.links[idx]) {
-              e.stopPropagation()
-              window.open(props.links[idx], '_blank')
-            }
-          },
-        })
-        draggables.value[idx] = draggable[0]
-        console.log('Draggable initialized for card', idx)
-      } catch (error) {
-        console.error('Error initializing draggable for card', idx, error)
-      }
+    if (!card) return
+    try {
+      const instance = Draggable.create(card, {
+        type: 'x,y',
+        inertia: false,
+        zIndexBoost: false,
+        dragClickables: true,
+        allowContextMenu: true,
+        minimumMovement: 3,
+        onPress: function () {
+          wasDragged.value[idx] = false
+        },
+        onDragStart: function () {
+          isDragging.value[idx] = true
+          wasDragged.value[idx] = true
+          gsap.to(this.target, {
+            scale: 1.1,
+            duration: 0.2,
+            ease: 'power2.out',
+          })
+        },
+        onDragEnd: function () {
+          isDragging.value[idx] = false
+          // Snap the card back to its slot (x/y are relative to the wrapper,
+          // which still holds the base rotate/translate position).
+          gsap.to(this.target, {
+            x: 0,
+            y: 0,
+            scale: 1,
+            duration: 0.5,
+            ease: 'elastic.out(1, 0.5)',
+          })
+        },
+        onClick: function () {
+          if (!wasDragged.value[idx] && props.links[idx]) {
+            window.open(props.links[idx], '_blank', 'noopener')
+          }
+        },
+      })
+      draggables.value[idx] = instance[0]
+    } catch (error) {
+      console.error('Error initializing draggable for card', idx, error)
     }
   })
 }
 
-onMounted(playEntranceAnimation)
+const killDraggables = () => {
+  draggables.value.forEach((draggable) => {
+    if (draggable) draggable.kill()
+  })
+  draggables.value = []
+  draggablesInitialized = false
+}
+
+onMounted(() => {
+  syncLoadedImages()
+  playEntranceAnimation()
+})
+
 watch(
   () => props.images,
   async () => {
     await nextTick()
-    gsap.set(cardRefs.value, { opacity: 0, scale: 0 })
+    killDraggables()
+    syncLoadedImages()
     playEntranceAnimation()
   },
 )
 
 onUnmounted(() => {
   gsap.killTweensOf(cardRefs.value)
-  draggables.value.forEach((draggable) => {
-    if (draggable) {
-      draggable.kill()
-    }
-  })
+  gsap.killTweensOf(wrapperRefs.value)
+  killDraggables()
 })
 </script>
 
 <style scoped>
 /* Pixel-art style rounded corners like Balatro cards */
 .draggable-card {
+  position: relative;
   touch-action: none;
   user-select: none;
   -webkit-user-select: none;
