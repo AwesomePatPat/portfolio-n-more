@@ -18,6 +18,11 @@ const routes: RouteRecordRaw[] = [
     component: () => import('../components/linktree/Linktree.vue')
   },
   {
+    path: '/spotify',
+    name: 'Spotify',
+    component: () => import('../components/spotify/Spotify.vue')
+  },
+  {
     path: '/contact',
     name: 'Contact',
     component: () => import('../components/contact/Contact.vue')

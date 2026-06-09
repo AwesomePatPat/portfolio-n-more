@@ -19,7 +19,14 @@
         >
           Valorant Roulette
         </router-link>
-        
+
+        <router-link
+          to="/spotify"
+          class="cursor-target cursor-none px-16 py-6 text-3xl font-bold text-[#4ade80] bg-transparent border-2 border-dashed border-[#4a5a4a] rounded-2xl hover:border-[#4ade80] transition-colors w-full text-center"
+        >
+          Spotify Stats
+        </router-link>
+
         <router-link
           to="/contact"
           class="cursor-target cursor-none px-16 py-6 text-3xl font-bold text-[#4ade80] bg-transparent border-2 border-dashed border-[#4a5a4a] rounded-2xl hover:border-[#4ade80] transition-colors w-full text-center"
